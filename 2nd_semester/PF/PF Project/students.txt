@@ -1,0 +1,19 @@
+6
+BITF12M706 Umar Akmal
+6
+3.7 4 F 2 2.3 F 
+BSEF12A402 Muhammad Hafeez
+3
+3.3 3 1.7 
+BCSF12M200 Shahid Khan Afridi
+4
+F 2.3 3.7 4 
+BITF12A238 Misbah ul Haq
+6
+3.3 3.2 3 4 F 3.7 
+BCSF12A654 Mutahir Raza
+4
+3 4 2.3 3.7 
+BSEF12M014 Hassan Anwar
+4
+3 4 2.3 3.7 

@@ -1,0 +1,8 @@
+Month: October
+
+--------------------
+Total collected:         $ 26572.89
+Sales:                   $ 25068.76
+County sales tax:        $ 501.38  
+State sales tax:         $ 1002.75 
+Total sales tax :        $ 1504.13 
