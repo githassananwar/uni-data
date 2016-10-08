@@ -1,0 +1,8 @@
+while(no !=0)
+{
+digit=no%10; //modulo
+reverse=reverse*10+digit;
+no=no/10;
+}
+printf("revere number=%d ",reverse);
+5 years ago

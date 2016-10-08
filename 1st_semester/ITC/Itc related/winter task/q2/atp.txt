@@ -1,0 +1,13 @@
+Bond energy is positive because energy is absorbed (negative is energy release).
+Bonds always require energy to break, hence energy is absorbed to break it.
+
+The "ATP delivers energy to the cell when it breaks down" is what people tell you when they do not want to explain the entire process of the energy derivation.
+
+Break bond = absorb energy
+Form bond = release energy
+
+The bond that connects Pi to ADP (which makes ATP) is a weak bond because it is highly unstable. This is nice because it requires little energy to break the bond. In most chemical reactions, bonds are both broken and formed. For instance, when making glucose-6-phosphate, you break the bond between Pi and ADP, but you form the bond between Pi and glucose. It requires energy to break the Pi and ADP bond, but you get energy from forming the Pi and glucose bond. The formation of glucose-6-phosphate much not give off a lot of energy, but that is okay because breaking down ATP does not take much energy either.
+
+This is how ATP "provides energy". Really, it's more like ATP does not take a lot of energy to break down.
+
+You'll also hear the saying "ATP has high energy bonds" from time to time. This is an inaccurate statement as you should now know. The bond between Pi and ADP in ATP is very low energy because little energy is needed to break it.
