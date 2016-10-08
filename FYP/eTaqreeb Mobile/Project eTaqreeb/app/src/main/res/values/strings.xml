@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">ETakreeb</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_gridview">gridview</string>
+    <string name="title_activity_programlist">programlist</string>
+    <string name="title_activity_login">login</string>
+    <string name="title_activity_signup">signup</string>
+    <string name="vendor">Vendor</string>
+    <string name="title_activity_create__event">Create_Event</string>
+    <string name="title_activity_dialog">dialog</string>
+    <string name="title_activity_vendor_signup">vendorSignup</string>
+    <string name="title_activity_vendor_details">vendorDetails</string>
+    <string name="title_activity_contactus">Contactus</string>
+    <string name="title_activity_update">Update</string>
+    <string name="title_activity_update__vendor">Update_Vendor</string>
+    <string name="title_activity_customer_main">customerMain</string>
+    <string name="title_activity_vendor_main">vendorMain</string>
+
+    <string name="planet_prompt">Choose a planet</string>
+    <string-array name="planets_array">
+        <item>Cattering</item>
+        <item>Dinner</item>
+        <item>DJ</item>
+        <item>Car Rental</item>
+        <item>Decoration</item>
+    </string-array>
+    <string name="shift">Choose a planet</string>
+    <string-array name="shift_array">
+        <item>Day</item>
+        <item>Night</item>
+
+    </string-array>
+    <string name="title_activity_service__pick">Service_Pick</string>
+    <string name="title_activity_select__vendor">Select_Vendor</string>
+    <string name="name">ListDisplay</string>
+    <string name="settings">Settings</string>
+    <string name="title_activity_edit_services">EditServices</string>
+    <string name="title_activity_customer_request">CustomerRequest</string>
+</resources>

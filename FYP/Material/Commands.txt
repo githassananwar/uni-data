@@ -1,0 +1,82 @@
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\wamp\bin>cd php
+
+C:\wamp\bin\php>cd C:\wamp\bin\php\php5.5.12
+
+C:\wamp\bin\php\php5.5.12>php.exe C:\wamp\www\yii\framework\yiic.php webapp C:\w
+amp\www\yii
+Create a Web application under 'C:\wamp\www\yii'? (yes|no) [no]:yes
+      mkdir C:/wamp/www/yii/assets
+      mkdir C:/wamp/www/yii/css
+   generate css/bg.gif
+   generate css/form.css
+   generate css/ie.css
+   generate css/main.css
+   generate css/print.css
+   generate css/screen.css
+      mkdir C:/wamp/www/yii/images
+   generate index-test.php
+   generate index.php
+      mkdir C:/wamp/www/yii/protected
+   generate protected/.htaccess
+      mkdir C:/wamp/www/yii/protected/commands
+      mkdir C:/wamp/www/yii/protected/commands/shell
+      mkdir C:/wamp/www/yii/protected/components
+   generate protected/components/Controller.php
+   generate protected/components/UserIdentity.php
+      mkdir C:/wamp/www/yii/protected/config
+   generate protected/config/console.php
+   generate protected/config/database.php
+   generate protected/config/main.php
+   generate protected/config/test.php
+      mkdir C:/wamp/www/yii/protected/controllers
+   generate protected/controllers/SiteController.php
+      mkdir C:/wamp/www/yii/protected/data
+   generate protected/data/schema.mysql.sql
+   generate protected/data/schema.sqlite.sql
+   generate protected/data/testdrive.db
+      mkdir C:/wamp/www/yii/protected/extensions
+      mkdir C:/wamp/www/yii/protected/messages
+      mkdir C:/wamp/www/yii/protected/migrations
+      mkdir C:/wamp/www/yii/protected/models
+   generate protected/models/ContactForm.php
+   generate protected/models/LoginForm.php
+      mkdir C:/wamp/www/yii/protected/runtime
+      mkdir C:/wamp/www/yii/protected/tests
+   generate protected/tests/bootstrap.php
+      mkdir C:/wamp/www/yii/protected/tests/fixtures
+      mkdir C:/wamp/www/yii/protected/tests/functional
+   generate protected/tests/functional/SiteTest.php
+   generate protected/tests/phpunit.xml
+      mkdir C:/wamp/www/yii/protected/tests/report
+      mkdir C:/wamp/www/yii/protected/tests/unit
+   generate protected/tests/WebTestCase.php
+      mkdir C:/wamp/www/yii/protected/vendor
+      mkdir C:/wamp/www/yii/protected/views
+      mkdir C:/wamp/www/yii/protected/views/layouts
+   generate protected/views/layouts/column1.php
+   generate protected/views/layouts/column2.php
+   generate protected/views/layouts/main.php
+      mkdir C:/wamp/www/yii/protected/views/site
+   generate protected/views/site/contact.php
+   generate protected/views/site/error.php
+   generate protected/views/site/index.php
+   generate protected/views/site/login.php
+      mkdir C:/wamp/www/yii/protected/views/site/pages
+   generate protected/views/site/pages/about.php
+   generate protected/yiic
+   generate protected/yiic.bat
+   generate protected/yiic.php
+      mkdir C:/wamp/www/yii/themes
+      mkdir C:/wamp/www/yii/themes/classic
+      mkdir C:/wamp/www/yii/themes/classic/views
+   generate themes/classic/views/.htaccess
+      mkdir C:/wamp/www/yii/themes/classic/views/layouts
+      mkdir C:/wamp/www/yii/themes/classic/views/site
+      mkdir C:/wamp/www/yii/themes/classic/views/system
+
+Your application has been created successfully under C:\wamp\www\yii.
+
+C:\wamp\bin\php\php5.5.12>

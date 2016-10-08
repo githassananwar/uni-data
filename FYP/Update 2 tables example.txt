@@ -1,0 +1,31 @@
+public function actionUpdate($id)
+	{
+		$model=$this->loadModel($id);
+		$cat=Yii::app()->createController('VendorServices');//returns array containing controller instance and action index.
+    	$cat=$cat[0]; //get the controller instance.
+    
+    	$modelServices=$cat->loadModel($id); //use a public method.
+
+		if(isset($_POST['Vendor']))
+		{
+			$model->attributes=$_POST['Vendor'];
+			if($model->save()){
+				if(isset($_POST['VendorServices']))
+				{
+					$modelServices->attributes = $_POST['VendorServices'];
+					$modelServices->vendor_id = $model->id;
+					if($modelServices->save())
+					{
+						$this->redirect(array('view','id'=>$model->id));	
+					}
+				}
+			}				
+		}
+		$this->render('update',array(
+			'model'=>$model,
+			'modelServices'=>$modelServices,
+		));
+
+	
+
+	}

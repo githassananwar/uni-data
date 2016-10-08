@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="wrap_content" android:layout_height="fill_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.google.etakreeb.Update_Vendor"
+    tools:showIn="@layout/activity_update__vendor">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/logocolor"
+        android:paddingBottom="10dp"
+        android:id="@+id/ll1"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:src="@drawable/pc"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:id="@+id/img1"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:src="@drawable/editicon"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Update Picture"
+                android:textColor="#000000"
+                />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/ll1"
+        android:layout_margin="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:layout_margin="4dp"/>
+        <EditText
+            android:id="@+id/e11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext"
+            android:drawablePadding="20dp"
+            android:gravity="center_vertical"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textColor="@color/logocolor"
+            android:textColorHint="#D8D8D8"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:hint="Vendor Name"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Company Name"
+            android:layout_margin="4dp"/>
+        <EditText
+            android:id="@+id/e22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext"
+            android:drawablePadding="20dp"
+            android:gravity="center_vertical"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textColor="@color/logocolor"
+            android:textColorHint="#D8D8D8"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:hint="Your Company Name"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Company Adrress"
+            android:layout_margin="4dp"/>
+        <EditText
+            android:id="@+id/e33"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext"
+            android:drawablePadding="20dp"
+            android:gravity="center_vertical"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textColor="@color/logocolor"
+            android:textColorHint="#D8D8D8"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:hint="Your Company Address"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Landline Number"
+            android:layout_margin="4dp"/>
+        <EditText
+            android:id="@+id/e44"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext"
+            android:drawablePadding="20dp"
+            android:gravity="center_vertical"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textColor="@color/logocolor"
+            android:textColorHint="#D8D8D8"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:hint="04231234567"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mobile Number"
+            android:layout_margin="4dp"/>
+        <EditText
+            android:id="@+id/e55"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext"
+            android:drawablePadding="20dp"
+            android:gravity="center_vertical"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textColor="@color/logocolor"
+            android:textColorHint="#D8D8D8"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:hint="03211234567"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:layout_margin="4dp"/>
+        <EditText
+            android:id="@+id/e66"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext"
+            android:drawablePadding="20dp"
+            android:gravity="center_vertical"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textColor="@color/logocolor"
+            android:textColorHint="#D8D8D8"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:hint="Email ID "/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:layout_margin="4dp"/>
+        <EditText
+            android:id="@+id/e77"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext"
+            android:drawablePadding="20dp"
+            android:gravity="center_vertical"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textColor="@color/logocolor"
+            android:textColorHint="#D8D8D8"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:hint="user name"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:layout_margin="4dp"/>
+        <EditText
+            android:id="@+id/e88"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext"
+            android:drawablePadding="20dp"
+            android:gravity="center_vertical"
+            android:imeOptions="actionNext"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textColor="@color/logocolor"
+            android:textColorHint="#D8D8D8"
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:hint="password"/>
+
+
+        <Button
+            android:id="@+id/updateVendor"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button"
+            android:text="Update"
+            android:textSize="20sp"
+            android:onClick="onClick"
+            android:inputType="textCapSentences"  />
+    </LinearLayout>
+</RelativeLayout>
+</ScrollView>
+

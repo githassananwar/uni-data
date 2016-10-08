@@ -1,0 +1,206 @@
+/*==================================================
+=            Bootstrap 3 Media Queries             =
+==================================================*/
+ 
+ 
+/*==========  Mobile First Method  ==========*/
+ 
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+}
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+}
+
+
+/*==========  Non-Mobile First Method  ==========*/
+ 
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1199px) {
+html {
+	font-size: 90%;
+}
+}
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 991px) {
+html {
+	font-size: 75%;
+}
+.sm-text-center {
+	text-align: center;
+}
+.sm-text-right {
+	text-align: right;
+}
+.sm-text-left {
+	text-align: left;
+}
+.sm-maxwidth400{
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 400px;
+}
+.sm-maxwidth500{
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 500px;
+}
+.sm-maxwidth600{
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 600px;
+}
+.divider, .parallax {
+  background-attachment: scroll;
+}
+.navbar-nav  .dropdown-menu {
+    left: auto;
+}
+#header-logo {
+	padding: 10px 15px;
+}
+section > .container, section > .container-fluid {
+	padding-bottom: 30px;
+}
+.divider .container {
+}
+.header .navbar-default .navbar-nav > li > a::after {
+	display: none;
+}
+.map {
+	margin-top: 30px;
+}
+.contact-wrapper {
+    padding: 50px 30px;
+}
+.header #header-logo {
+	padding-top: 20px;
+}
+.minimal-layout .header #header-logo {
+	padding-top: 10px;
+}
+.header .navbar-default .navbar-toggle {
+	margin-top: 18px;
+}
+.minimal-layout .header .navbar-default .navbar-toggle {
+	margin-top: 8px;
+}
+.header #header-logo img {
+	height: 30px;
+}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 767px) {
+html {
+	font-size: 60%;
+}
+.xs-text-center {
+	text-align: center;
+}
+.xs-text-right {
+	text-align: right;
+}
+.xs-text-left {
+	text-align: left;
+}
+.xs-fullwidth {
+	width: 100%;
+}
+.maxwidth400{
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 400px;
+}
+.maxwidth500{
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 500px;
+}
+.maxwidth600{
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 600px;
+}
+.xs-pull-center {
+	display: table;
+	float: none !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+.box-hover-effect {
+	float: none;
+}
+#header-logo {
+	padding: 10px 15px;
+}
+#spinner {
+	left: 42%;
+}
+.navbar-default .navbar-toggle {
+	margin-top: 15px;
+	border-radius: 0px;
+}
+#home .display-table p {
+	margin: 15px 0;
+	font-size: 14px;
+}
+.call-to-action {
+	text-align: center;
+}
+.call-to-action .icon {
+	float: none;
+}
+.sidebar.pull-left,
+.sidebar.pull-right {
+	float: none !important;
+}
+.blog-posts .entry-meta {
+	background: none;
+	left: auto;
+	position: relative;
+	top: auto;
+}
+.blog-posts .entry-meta li {
+	border: 1px solid #ddd;
+	display: inline-block;
+}
+.testimonial-carousel.boxed .owl-dots {
+ 	text-align: center;
+}
+}
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 479px) {
+html {
+	font-size: 50%;
+}
+.xxs-text-center {
+	text-align: center;
+}
+.post > div {
+	width: 100%;
+}
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 319px) {
+html {
+	font-size: 35%;
+}
+}
