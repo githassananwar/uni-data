@@ -1,0 +1,65 @@
+﻿body{
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 12px;
+    background:#0C5997 url("../images/page_bg.jpg") no-repeat fixed;
+}
+
+#header{
+	background: transparent url(../images/header_bg.png) repeat-x;
+    padding-bottom:10px;
+    width:100%;
+    margin-bottom:50px;
+	}
+
+.nsu-title{
+    padding-top:6px;
+    color:white;
+    text-align:center;
+}
+#logo img{
+    margin-top:6px;
+}
+.panel-heading{
+    border-top-right-radius:8px;
+    border-top-left-radius:8px;
+    font-size: 20px;
+    font-weight:600;
+}
+.panel{
+    background-color:#F2F5F9;
+    border: 10px solid rgb(100, 100, 100); /* default color */
+    border: 10px solid rgba(0, 0, 0, 0.3); /* rgba for transparency */
+    -moz-background-clip: padding;
+    -webkit-background-clip:padding-box;  
+    background-clip: padding-box;   
+    border-radius:20px;
+}
+
+
+.panel-body p{
+    text-align:justify;
+}
+.panel-body li{
+    text-align:justify;
+    margin-bottom:5px;
+}
+
+.table-hover > tbody > tr:hover, .table-hover > tbody > tr:hover a {
+    background-color: #0C5997;
+    color: white;
+}
+/*------footer------------*/
+
+#footer {
+    clear:both;
+    padding-top: 15px;
+    padding-bottom:2px;
+    background:#22358c;
+    margin-bottom: 0px;
+    -moz-box-shadow: 0 1px 3px #000000;
+    -webkit-box-shadow: 0 1px 10px #000000;
+    box-shadow: 0 1px 10px #000000;
+    text-align:center;
+    color:#fff;
+    font-size:14px; 
+}

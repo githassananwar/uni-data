@@ -1,0 +1,333 @@
+/* You can type here any CSS code that will be loaded both on your admin and front-end pages.
+Let us help you by giving a few exmaple CSS classes: */
+
+/* Front-end sliders & preview */
+
+
+
+/* slider text styles */
+.ls-slide .ls-l{
+	max-width: 1170px;
+}
+
+body .ls-video-layer{
+	width: 100%!important;
+	left: 0 !important;
+	max-width: 100% !important;
+}
+
+.ls-slide video, .ls-video-full {
+	left: 0 !important;
+	max-width: 100% !important;
+	width: 100% !important;
+}
+
+.stext1 em, .stext1 span {
+	background-color: #13afeb;
+	color: #fff;
+	font-style: normal;
+	font-weight: 600;
+	padding: 0 8px;
+}
+
+.ls-slide .stext1{
+	width: 100%;
+	font-size: 50px;
+	line-height: 58px;
+	color: #272727;
+	font-weight: normal;
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+}
+
+.ls-slide  strong {
+	font-weight: 600;
+	font-family: 'Raleway', sans-serif;
+}
+
+.ls-slide .stext1 em {
+	color: #fff;
+	font-weight: 600;
+	padding: 0 8px;
+	font-style: normal;
+	background-color: #13afeb;
+	font-family: 'Raleway', sans-serif;
+}
+
+.ls-slide .stext2{
+	width: 100%;
+	text-align: center;
+	font-size: 18px;
+	color: #272727;
+	font-weight: normal;
+	font-family: 'Raleway', sans-serif;
+}
+
+.stext3 {
+	font-size: 30px;
+	color: #fff;
+	font-weight: normal;
+	padding: 10px 18px;
+	background-color: #727272;
+}
+
+
+.ls-slide .sbutton1{
+	font-size: 16px;
+	color: #fff;
+	font-weight: normal;
+	background-color: #272727;
+	padding: 18px 30px;
+	border-radius: 4px;
+	-webkit-transition: width .3s, height .3s, background-color .3s, -webkit-transform .3s;
+	transition: width .3s, height .3s, background-color .3s, transform .3s;
+}
+
+
+body .ls-slide  .sbutton1:hover {
+	color: #fff;
+	background-color: #7ab700;
+}
+
+
+.ls-slide .stext4 {
+	font-size: 50px;
+	line-height: 58px;
+	color: #272727;
+	font-weight: normal;
+}
+.ls-slide .stext4 strong {
+	font-weight: bold;
+}
+.ls-slide .stext4 em {
+	font-style: normal;
+}
+
+.ls-slide .stext5 {
+	font-size: 18px;
+	color: #272727;
+	font-weight: normal;
+}
+
+.ls-slide .stext6 {
+	font-size: 50px;
+	line-height: 58px;
+	color: #fff;
+	font-weight: normal;
+}
+.ls-slide .stext6 strong {
+	font-weight: bold;
+}
+.ls-slide .stext6 em {
+	font-style: normal;
+	color: #7ab700;
+}
+
+.ls-slide .stext7 {
+	font-size: 18px;
+	color: #fff;
+	font-weight: normal;
+}
+
+.ls-slide .stext9 {
+	text-align: center;
+	font-size: 27px;
+	color: #7ab700;
+	line-height: 35px;
+	font-weight: normal;
+}
+.ls-slide .stext9 i {
+	font-size: 40px;
+}
+
+
+.ls-slide .sbutton4 {
+	font-size: 16px;
+	color: #fff;
+	font-weight: normal;
+	background-color: #999;
+	padding: 18px 30px;
+	border-radius: 4px;
+	-webkit-transition:width .3s, height .3s, background-color .3s, -webkit-transform .3s;
+    transition:width .3s, height .3s, background-color .3s, transform .3s;
+}
+.ls-slide .sbutton4:hover {
+	color: #fff;
+	background-color: #7ab700;
+}
+
+
+.ls-slide .hps-vicapton-box {
+    width: 49%;
+	height: 75px;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.ls-slide .hps-hd {
+    font-weight: 900;
+    font-size: 130px;
+}
+
+.ls-slide .hps-videotitle {
+    font-size: 50px;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	background: rgba(0, 0, 0, 0.6);
+}
+
+.ls-slide .hps-videotext {
+    width: 62%!important;
+	padding: 20px;
+	color: #fff;
+	font-size: 25px;
+	text-transform: uppercase;
+	background: rgba(0, 0, 0, 0.6);
+	font-family: 'Raleway', sans-serif;
+	line-height:25px;
+}
+
+
+.scircle1 {
+	width: 122px;
+	height: 122px;
+}
+.scircle1 div {
+	background: rgba(255,255,255,.3);
+	width: 100%;
+	height: 100%;
+	border: 2px solid #fff;
+	border-radius: 100%;
+	padding: 2px;
+	text-align:center;
+}
+.scircle1 div span {
+	float: left;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	text-align: center;
+	background-color: #fff;
+	border-radius: 100%;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	-moz-opacity: 0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;
+}
+.scircle1 i {
+	color: #1D6490;
+	font-size: 40px;
+	margin-top:26px;
+}
+
+.ls-slide  .small-text {
+	margin: 0;
+	font-weight: 300;
+	padding: 0;
+	text-align: center;
+	width: 100%;
+	font-size: 50px;
+	color: #fff;
+	text-shadow: -1px 1px #727272;
+}
+
+.ls-slide .medium-text {
+	font-weight: 100;
+	font-size: 72px;
+	margin: 0;
+	padding: 0;
+	color: #fff;
+}
+
+.ls-slide  .big-text{
+	font-weight: bold;
+	padding: 0;
+	font-size: 72px;
+	margin: 0;
+	color: #fff;
+}
+
+
+.feature_section24 .ls-slide .ls-video-layer{
+	width: 100%!important;
+	height: 100%!important;
+}
+
+.feature_section24 .ls-slide .ls-video-layer video{
+	width: 1903px !important;
+	height: auto!important;
+	margin-top: -200px;
+}
+.sbox1 div {
+
+	text-align: center;
+	background: url(../images/site-img13.png) no-repeat left top;
+	border-bottom: 2px solid #727272;
+}
+.sbox1 div i {
+	font-size: 40px;
+	color: #13afeb;
+	margin-bottom: 18px;
+	margin-top: 38px;
+}
+
+
+.sbutton_o1{
+	text-transform: uppercase;
+}
+
+.sbutton_o1:hover{
+	background: #FFFFFF;
+	color: #333333!important;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 999px){
+	.sbox1 div i {
+		font-size: 30px;
+	}
+	
+	.scircle1{
+		width:100px;
+		height:100px;
+		font-size: 10px;
+	}
+	.scircle1 i{
+		margin-top:15px;
+	}
+}
+
+@media only screen and (min-width: 640px) and (max-width: 767px){
+
+	.scircle1{
+		width:90px;
+		height:90px;
+		font-size: 10px;
+	}
+	.scircle1 i{
+		margin-top:10px;
+		font-size: 30px;
+	}
+	.scircle1 h6{
+		font-size:12px;
+	}
+}
+
+@media only screen and (max-width: 439px){
+	.scircle1{
+		width:35px;
+		height:35px;
+		font-size: 10px;
+	}
+	.scircle1 i{
+		margin-top:15px;
+		font-size:5px;
+	}
+	.scircle1 h6{
+		font-size: 6px;
+	}
+	.sbox1 div i {
+		font-size: 15px;
+		margin-top:18px;
+	}	
+}

@@ -1,0 +1,107 @@
+﻿body{
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 12px;
+    background:#0C5997 url("../images/page_bg.jpg") no-repeat fixed;
+}
+#header{
+	background: transparent url(../images/header_bg.png) repeat-x;
+    padding-bottom:10px;
+    width:100%;
+    
+	}
+
+.nsu-title{
+    padding-top:6px;
+    color:white;
+    text-align:center;
+}
+#logo img{
+    margin-top:6px;
+}
+
+.menu-panel{
+    margin-bottom:35px;
+}
+.panel-heading{
+    border-top-right-radius:8px;
+    border-top-left-radius:8px;
+    font-size: 14px;
+    font-weight:600;
+}
+
+.well {
+    border:0;
+    border-radius:0;
+	background:inherit;
+    margin:0;
+    margin-top:25px;	
+}
+
+.panel{
+    background-color:#F2F5F9;
+    border: 10px solid rgb(100, 100, 100); /* default color */
+    border: 10px solid rgba(0, 0, 0, 0.3); /* rgba for transparency */
+    -moz-background-clip: padding;
+    -webkit-background-clip:padding-box;  
+    background-clip: padding-box;   
+    border-radius:20px;
+    min-height:450px;
+}
+
+
+.panel-body p{
+    text-align:justify;
+}
+.panel-body li{
+    text-align:justify;
+    margin-bottom:5px;
+}
+
+.filter {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+    .filter li a {
+        padding: 7px 20px;
+        font-size: 14px;
+        color: black;
+        font-weight: 600;
+        border: 1px solid #337ab7;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+
+        .filter li a:hover {
+            background:#337ab7;
+            color: #fff;
+        }
+
+        .filter li a.active {
+            background: #337ab7;
+            color: #fff;
+        }
+
+    .filter li {
+        margin-bottom: 10px;
+        position: relative;
+        cursor: pointer;
+        text-align:left;
+    }
+
+
+/*------footer------------*/
+
+#footer {
+    padding-top: 15px;
+    padding-bottom:2px;
+    background:#22358c;
+    margin-bottom: 0px;
+    -moz-box-shadow: 0 1px 3px #000000;
+    -webkit-box-shadow: 0 1px 10px #000000;
+    box-shadow: 0 1px 10px #000000;
+    text-align:center;
+    color:#fff;
+    font-size:14px; 
+}
+

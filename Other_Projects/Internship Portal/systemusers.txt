@@ -1,0 +1,21 @@
+
+Super Admin:
+Username: justin
+Password: 123	
+----------------------------------
+Admins(currently):
+Admin#1:
+	Username: ahsan
+	Password: 123
+Admin#2:
+	Username: muzamil
+	Password: 123
+----------------------------------
+Students:
+Student#1:
+	Username: asad
+	Password: 123
+Student#2:
+	Username: nicky
+	Password: 123	
+----------------------------------
