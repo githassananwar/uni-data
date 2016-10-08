@@ -1,0 +1,177 @@
+﻿@model MvcApplication2.Models.caterer
+@{
+    ViewBag.Title = "UpdateInfo";
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
+
+}
+
+<div class="container">
+ <div class="row">
+     <br />
+
+      <div class="col-lg-12"  style="background-image:url('../../updateCaterer.jpg'); height: 220px; width:1180px;">
+                <div class="carousel-caption">
+                    <h2>Update Caterer</h2>
+                </div>
+            </div>
+        </div>
+     <br />
+            <div class="col-lg-12">
+                <ol class="breadcrumb">
+                    <li><a href="/Home/Index">Home</a>
+                    </li>
+                    <li class="active">UpdateCaterer</li>
+                </ol>              
+                
+                 <h2 class="page-header">Update Caterers</h2>
+
+                </div>
+
+
+    <form method ="post" class = "form-horizontal" action ="/Caterer/update" enctype ="multipart/form-data" >
+
+                    <div class="form-group">
+                <label for="user-name" class="col-lg-2 control-label">Name:</label>
+                <div class="col-lg-6">
+                  @Html.TextBoxFor(m => m.name, new { @class = "form-control", placeholder = "Name" , id="name", type = "text", required = "required"})
+                </div>
+              </div><!-- End form group -->
+               
+        
+            
+                
+              <div class="form-group">
+                <label for="user-name" class="col-lg-2 control-label">Company Address:</label>
+                <div class="col-lg-6">
+                  @Html.TextBoxFor(m => m.address, new { @class = "form-control", placeholder = "Address", id="address", type = "text", required = "required"})
+                </div>
+              </div><!-- End form group -->
+                 
+
+                                                           
+             <div class="form-group">
+                <label for="user-name" class="col-lg-2 control-label">City:</label>
+                <div class="col-lg-6">
+                    <select class="form-control" name="city" required" id="city">
+              <option>--Select Your City--</option>
+              <option>Islamabad</option>
+              <option>Lahore</option>
+              <option>Faisalabad</option>
+              <option>Karachi</option>
+            </select>
+                </div>
+              </div><!-- End form group -->
+
+              <div class="form-group">
+                <label for="user-url" class="col-lg-2 control-label">Phone no: </label>
+                <div class="col-lg-6">
+                  @Html.TextBoxFor(m => m.phone, new { @class = "form-control", placeholder = "Enter your phone no",id="phone", type = "text", required = "required"})
+                </div>
+              </div><!-- End form group -->
+
+              <div class="form-group">
+                <label for="user-email" class="col-lg-2 control-label">Email: </label>
+                <div class="col-lg-6">
+                  @Html.TextBoxFor(m => m.email, new { @class = "form-control", placeholder = "Enter your email" ,id="email", type = "text", required = "required"})
+                </div>
+              </div><!-- End form group -->
+
+              <div class="form-group">
+                <label for="user-url" class="col-lg-2 control-label">Per Head (Rs.): </label>
+                <div class="col-lg-6">
+                   @Html.TextBoxFor(m => m.perhead, new { @class = "form-control", placeholder = "Enter amount" ,id="perhead", type = "text", required = "required"})
+                </div>
+              </div><!-- End form group -->
+
+               <div class="form-group">
+                <label for="user-url" class="col-lg-2 control-label">Services: </label>
+                <div class="col-lg-6">
+                   @Html.TextBoxFor(m => m.services, new { @class = "form-control", placeholder = "Enter services" ,id="services", type = "text", required = "required"})
+                </div>
+              </div><!-- End form group -->
+               
+               <div class="form-group">
+                <label for="user-url" class="col-lg-2 control-label">Working Hours: </label>
+                <div class="col-lg-6">
+                   @Html.TextBoxFor(m => m.workinghours, new { @class = "form-control", placeholder = "Enter Working Hours" ,id="workinghours", type = "text", required = "required"})
+                </div>
+              </div><!-- End form group -->
+               
+               
+               <div class="form-group">
+                <label for="user-url" class="col-lg-2 control-label">Short note on Company: </label>
+                <div class="col-lg-6">
+                   @Html.TextBoxFor(m => m.note, new { @class = "form-control",id="note", placeholder = "Write here ..." , type = "text", required = "required"})
+                </div>
+              </div><!-- End form group -->
+               
+               <div class="form-group">
+                <label for="user-url" class="col-lg-2 control-label">Facebook link: </label>
+                <div class="col-lg-6">
+                   @Html.TextBoxFor(m => m.fb, new { @class = "form-control",id="fb", placeholder = "@Link" , type = "text", required = "required"})
+                </div>
+              </div><!-- End form group -->
+               
+               <div class="form-group">
+                <label for="user-url" class="col-lg-2 control-label">Twitter Link: </label>
+                <div class="col-lg-6">
+                   @Html.TextBoxFor(m => m.twitter, new { @class = "form-control",id="tw", placeholder = "@Link" , type = "text", required = "required"})
+                </div>
+              </div><!-- End form group -->
+               
+               <div class="form-group">
+                <label for="user-url" class="col-lg-2 control-label">Other Link: </label>
+                <div class="col-lg-6">
+                   @Html.TextBoxFor(m => m.social, new { @class = "form-control",id="link", placeholder = "@Link" , type = "text", required = "required"})
+                </div>
+              </div><!-- End form group -->
+
+              <div class="form-group">
+                <label for="user-message" class="col-lg-2 control-label">Description: </label>
+                <div class="col-lg-6">
+                  <textarea name="description" id="des" class="form-control" 
+                  cols="5" rows="10" placeholder="Description"></textarea>
+                </div>
+              </div><!-- End form group -->
+
+              <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                  <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" required/>
+                        Are you sure that updated information you provided is correct?
+                      </label>
+                    </div>
+                </div>
+              </div>  
+                              
+                                                                
+              <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+
+                        
+               </form>
+    
+
+
+    </div>
+
+<script>
+      $('#name').val("@Model.name");
+    $('#address').val("@Model.address");
+    $('#city').val("@Model.city");
+    $('#email').val("@Model.email");
+    $('#des').val("@Model.description");
+    $('#fb').val("@Model.fb");
+    $('#note').val("@Model.note");
+    $('#perhead').val("@Model.perhead");
+    $('#phone').val("@Model.phone");
+    $('#services').val("@Model.services");
+    $('#social').val("@Model.social");
+    $('#tw').val("@Model.twitter");
+ 
+      
+  </script>

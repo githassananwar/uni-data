@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>@ViewBag.Title</title>
+    
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Login.css" rel="stylesheet" />
+    <link href="~/Content/SignUp.css" rel="stylesheet" />
+    <link href="~/Content/AboutUs.css" rel="stylesheet" />
+     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link href="~/Content/mycss.css" rel="stylesheet" />
+
+    <!-- Custom Fonts -->
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    
+    <script src="~/Scripts/jquery-1.11.3.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.8.24.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+
+     <style>
+        #pro{
+        -webkit-transition: background-image 1s ease-in-out;
+         -moz-transition: background-image 1s ease-in-out;
+        -ms-transition: background-image 1s ease-in-out;
+        -o-transition: background-image 1s ease-in-out;
+        transition: background-image 1s ease-in-out;
+             
+        }
+
+        .socialPics
+        {
+             height:50px;
+             width:50px;
+        }
+
+
+    </style>
+   
+    @RenderSection("chk",false)
+
+    <script>
+
+        $(document).ready(function () {
+            $('.dropdown-toggle').dropdown();
+        });
+
+
+        var currentBackground = 0;
+        var backgrounds = [];
+        backgrounds[0] = '../../cover1.jpg';
+        backgrounds[1] = '../../cover2.jpg';
+        backgrounds[2] = '../../cover3.jpg';
+
+        function changeBackground() {
+            currentBackground++;
+            if (currentBackground > 2) currentBackground = 0;
+
+            $("#pro").css({
+                'background-image': "url('" + backgrounds[currentBackground] + "')"
+            });
+
+            setTimeout(changeBackground, 3500);
+        }
+
+    </script>
+   
+  
+  
+</head>
+<body >
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/Home/Index" style="color: #fff">eCaterer</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                     <li>
+                       @Html.ActionLink("Home", "../Home/Index")
+                    </li>
+                    <li>
+                       @Html.ActionLink("About Us", "../Home/AboutUs")
+                    </li>
+                    <li>
+                       @Html.ActionLink("Contact", "../Home/Contact")
+                    </li>
+                   
+                       
+                       @if (HttpContext.Current.Session["signin"] == null)
+                        {
+                           <li>
+                             @Html.ActionLink("Login/SignUp", "../Home/login", new { id = "login"} )
+                               </li>
+                              
+                        }
+                       else if (HttpContext.Current.Session["signin"] == "done")
+                        {
+                              
+                   <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Hi, @Session["Username"] <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+            
+                        <li>
+                            <a href="/Caterer/updateCaterer"><i class="fa fa-fw fa-gear"></i>Update My Caterers</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="/Home/logout"><i class="fa fa-fw fa-power-off"></i> Sign Out</a>
+                        </li>
+                    </ul>
+                </li>
+                
+                        }  
+          
+                        
+                   
+
+                    </ul>
+                </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+   
+   @RenderBody()
+
+
+   <!-- Footer -->
+
+        <div class="container text-center">
+        <hr />
+        <ul class="list-inline">
+          <li><a href="http://www.facebook.com/"><img src="../../fb.png" class="socialPics"/></a></li>
+          <li><a href="http://www.twitter.com/"><img src="../../twitter.png" class="socialPics"/></a></li>
+          <li><a href="http://www.youtube.com/"><img src="../../utube.png" class="socialPics"/></a></li>
+        </ul>
+
+        <p>&copy; Copyright 2015</p>
+
+      </div><!-- end Container-->
+      
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,331 @@
+﻿@model finalProject.Models.Donor
+
+  	<!-- Feedback-->
+  	<div class="container">
+  		<section>
+  			<div class="page-header" >
+  				<h2>Donors Registration</h2>
+  			</div>
+
+  			<div class="row">
+  				<div class="col-md-8">
+  					@* <form action="/BecomeADonor/add" class="form-horizontal" method="post">*@
+                     @using (Html.BeginForm("../BecomeADonor/add", "", FormMethod.Post, new { @class = "form-horizontal" }))
+                     {
+
+                    
+
+              <div class="form-group">
+                <label for="user-name" class="col-lg-2 control-label">Name</label>
+                <div class="col-lg-8">
+                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Enter your name", type = "text", required = "required" })
+
+                  @*<input type="text" class="form-control" id="Text4" placeholder="Enter you name" name="Name" required/>*@
+                </div>
+              </div><!-- End form group -->
+
+              <div class="form-group">
+                <label for="user-email" class="col-lg-2 control-label">Gender</label>
+                  <div class="col-lg-8">
+                   <label class="radio-inline">
+                    <input type="radio" id="inlineRadio1" value="Male" name="Gender"/> Male
+                    </label>
+                       <label class="radio-inline">
+                    <input type="radio" id="inlineRadio2" value="Female" name="Gender"/> Female     
+                    </label>
+                        </div>
+              </div><!-- End form group -->
+
+              <div class="form-group">
+                <label for="user-name" class="col-lg-2 control-label">Blood Group</label>
+                <div class="col-lg-8">
+                    <select class="form-control" name="BloodGroup" required>
+              <option>--Select Your Blood Group--</option>
+              <option>A+</option>
+              <option>A-</option>
+              <option>B+</option>
+              <option>B-</option>
+            </select>
+                </div>
+              </div><!-- End form group -->
+
+                  <div class="form-group">
+                <label for="user-name" class="col-lg-2 control-label">Date Of Birth</label>
+                <div class="col-lg-10">
+                    <div class="col-md-3">
+                    <select class="form-control" name="day" required>
+                          <option>--Day--</option>
+                          <option>01</option>
+                          <option>02</option>
+                          <option>03</option>
+                          <option>04</option>
+                          <option>05</option>
+                        <option>06</option>
+                        <option>07</option>
+                        <option>08</option>
+                        <option>09</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                        <option>13</option>
+                        <option>14</option>
+                        <option>15</option>
+                        <option>16</option>
+                        <option>17</option>
+                        <option>18</option>
+                        <option>19</option>
+                        <option>20</option>
+                        <option>21</option>
+                        <option>22</option>
+                        <option>23</option>
+                        <option>24</option>
+                        <option>25</option>
+                        <option>26</option>
+                        <option>27</option>
+                        <option>28</option>
+                        <option>29</option>
+                        <option>30</option>
+                        <option>31</option>
+              
+            </select>
+                        </div>
+                    <div class="col-md-3">
+                       <select class="form-control" name="mon" required>
+                          <option>--Month--</option>
+                          <option>January</option>
+                          <option>Feburary</option>
+                          <option>March</option>
+                          <option>April</option>
+                           <option>May</option>
+                           <option>June</option>
+                           <option>July</option>
+                           <option>August</option>
+                           <option>September</option>
+                           <option>October</option>
+                           <option>November</option>
+                           <option>December</option>
+                        </select>
+                     </div>
+
+                     <div class="col-md-3">
+                    <select class="form-control" name="year" required>
+                          <option>--Year--</option>
+                          <option>1955</option>
+                          <option>1956</option>
+                          <option>1957</option>
+                          <option>1958</option>
+                          <option>1959</option>
+                        <option>1960</option>
+                        <option>1961</option>
+                        <option>1962</option>
+                        <option>1963</option>
+                        <option>1964</option>
+                        <option>1965</option>
+                        <option>1966</option>
+                        <option>1967</option>
+                        <option>1968</option>
+                        <option>1969</option>
+                        <option>1970</option>
+                        <option>1971</option>
+                        <option>1972</option>
+                        <option>1973</option>
+                        <option>1974</option>
+                        <option>1975</option>
+                        <option>1976</option>
+                        <option>1977</option>
+                        <option>1978</option>
+                        <option>1979</option>
+                        <option>1980</option>
+                        <option>1981</option>
+                        <option>1982</option>
+                        <option>1983</option>
+                        <option>1984</option>
+                        <option>1985</option>
+              
+            </select>
+                        </div>
+                </div>
+              </div><!-- End form group -->
+
+                                                           
+             <div class="form-group">
+                <label for="user-name" class="col-lg-2 control-label">City</label>
+                <div class="col-lg-8">
+                    <select class="form-control" name="City" required>
+              <option>--Select Your City--</option>
+              <option>Islamabad</option>
+              <option>Multan</option>
+              <option>Faisalabad</option>
+              <option>Karachi</option>
+            </select>
+                </div>
+              </div><!-- End form group -->
+
+              <div class="form-group">
+                <label for="user-url" class="col-lg-2 control-label">CNIC</label>
+                <div class="col-lg-8">
+                  <input type="text" class="form-control" id="Text7" placeholder="Enter Your CNIC" required name="Cnic">
+                </div>
+              </div><!-- End form group -->
+
+              <div class="form-group">
+                <label for="user-email" class="col-lg-2 control-label" >Email</label>
+                <div class="col-lg-8">
+                  <input type="email" id ="usr" class="form-control" id="Text5" placeholder="Enter you Email Address" required name="Email"/><span id ="nicmsg"></span>
+                </div>
+              </div><!-- End form group -->
+
+              <div class="form-group">
+                <label for="user-email" class="col-lg-2 control-label">Create Password</label>
+                <div class="col-lg-8">
+                  <input type="password" class="form-control" id="Text3" name="Password" required />
+                </div>
+              </div><!-- End form group -->
+
+              <div class="form-group">
+                <label for="user-email" class="col-lg-2 control-label">Confirm Password</label>
+                <div class="col-lg-8">
+                  <input type="password" class="form-control" id="Password1" required/><span id="message"></span>
+                </div>
+              </div><!-- End form group -->
+
+
+              <div class="form-group">
+                <label for="user-name" class="col-lg-2 control-label">Address</label>
+                <div class="col-lg-8">
+                  <input type="text" class="form-control" id="Text8" placeholder="Enter you address" name="Address" required/>
+                </div>
+              </div><!-- End form group -->
+
+              <div class="form-group">
+                <label for="user-url" class="col-lg-2 control-label">Contact No</label>
+                <div class="col-lg-8">
+                  <input type="text" class="form-control" id="Text6" placeholder="e.g  0321-1234567" required name="Contact">
+                </div>
+              </div><!-- End form group -->
+
+
+
+              <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                  <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" required/>
+                        I am agree to donate my blood and show my info in Blood donors List.
+                      </label>
+                    </div>
+                </div>
+              </div>  
+                                                   
+              <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+
+             
+
+            @*</form>*@
+                     }
+  				</div>
+  				<div class="col-md-4">
+                      <div class="col-md-6">
+                @{
+                    WebImage photo = null;
+                    var newFileName = "";
+                    var imagePath = "";
+
+                    if (IsPost)
+                    {
+                        photo = WebImage.GetImageFromRequest();
+                        if (photo != null)
+                        {
+                            newFileName = Guid.NewGuid().ToString() + "_" +
+                                Path.GetFileName(photo.FileName);
+                            imagePath = @"ProfilePics\" + newFileName;
+
+                            photo.Save(@"~\" + imagePath);
+                        }
+                    }
+
+                    Session["opo"] = imagePath;
+                    
+
+                }
+                          
+                          @*<script>
+                              var v = @imagePath
+                              $(document).ready(function () {
+                                  $('#lll').click(function () {
+                                      $.getJSON("/BecomeADonor/filing?n=" + v, function (x) { });
+                                  });
+                              });
+                    </script>*@
+                          
+  					  <form action="" method="post" enctype="multipart/form-data">
+                        <fieldset>
+                          <label for="Image"><span>Add a Profile Picture</span></label>
+                          <input type="file" name="Image" />
+                           
+                            <br/>
+                          <input type="submit" id ="lll" value="Upload" />
+                        </fieldset>
+                     </form>
+                          </div>
+                      <div class="col-md-6 pull-right">
+                          @if (imagePath != "")
+                          {
+                            <div class="result">
+                                <img src="~/@imagePath" alt="image" class="propic" />
+                                @*<script>$("#my_image").attr("src", "~/@imagePath");</script>*@
+                            </div>
+                          
+                          }
+                          else
+                          {
+                               <img src="~/Img/profile-pic.jpg" class="propic" id="my_image"/>
+                          }
+                        </div>
+  				</div>
+  				
+  			</div><!-- End row -->
+  		</section>
+  	</div><!--End Container-->
+
+<script>
+    $('#Password1').on('keyup', function () {
+        if ($(this).val() == $('#Text3').val()) {
+            $('#message').html('matching').css('color', 'green');
+        } else {
+            $('#message').html('not matching').css('color', 'red');
+            $(this).val() = "";
+        }
+    });
+</script>
+@section chck
+{
+    <script>
+        $(document).ready(function () {
+            $('#usr').focusout(function () {
+                if ($(this).val().length == 0) {
+                    $('#nicmsg').html('Enter Email').css('color', 'red');
+                }
+                else {
+                    $.getJSON("/Home/check?n=" + $('#usr').val(), function (x) {
+                        if (x == true) {
+                            $('#nicmsg').html('Email already exists. Enter again').css('color', 'red');
+                            document.getElementById("usr").value = ""
+                        }
+                        else {
+                            $('#nicmsg').html('Available').css('color', 'green');
+                        }
+                    });
+                }
+            });
+        });
+        </script>
+}
+
+
+
+

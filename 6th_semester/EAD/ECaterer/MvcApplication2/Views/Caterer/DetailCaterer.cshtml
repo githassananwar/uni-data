@@ -1,0 +1,98 @@
+﻿@model MvcApplication2.Models.caterer
+
+@{
+    ViewBag.Title = "DetailCaterer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3500">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="fill" style="background-image:url('../../slide1.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Search your Caterer</h2>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('../../slide2.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Best Caterers in Town</h2>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('../../slide3.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Explore the best for You</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    </header>
+
+<div class="container">
+
+ <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">@Model.name</h2>
+            </div>
+            <div class="col-md-6">
+                <p>Our services include:</p>
+                <ul>
+                   @Model.services
+                </ul>
+
+                
+                <p><strong>Per Head: </strong>Rs. @Model.perhead /-</p>
+
+                <p>@Model.description</p>
+                
+                 <h3>Contact Details</h3>
+                <p>
+                    @Model.address<br>@Model.city, Pakistan<br>
+                </p>
+                <p><i class="fa fa-phone"></i> 
+                    <abbr title="Phone">P</abbr>: @Model.phone</p>
+                <p><i class="fa fa-envelope-o"></i> 
+                    <abbr title="Web">E</abbr>: <a href="@Model.email">@Model.email</a>
+                </p>
+                <p><i class="fa fa-clock-o"></i> 
+                    <abbr title="Hours">H</abbr>: @Model.workinghours</p>
+                <ul class="list-unstyled list-inline list-social-icons">
+                    <li>
+                        <a href="@Model.fb"><i class="fa fa-facebook-square fa-2x"></i></a>
+                    </li>
+                    <li>
+                        <a href="@Model.twitter"><i class="fa fa-twitter-square fa-2x"></i></a>
+                    </li>
+                    <li>
+                        <a href="@Model.social"><i class="fa fa-linkedin-square fa-2x"></i></a>
+                    </li>
+                    
+                </ul>
+            
+            
+            </div>
+            <div class="col-md-6">
+                <img  class="img-responsive" src="@Model.image" alt="">
+            </div>
+        </div>
+
+    </div>
+        <!-- /.row -->
+
+        <hr>

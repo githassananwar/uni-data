@@ -1,0 +1,178 @@
+﻿
+@model finalProject.Models.Donor
+
+  	<!-- Feedback-->
+  	<div class="container">
+  		<section>
+  			<div class="page-header" >
+  				<h2>Update Information</h2>
+  			</div>
+  			<div class="row">
+  				<div class="col-md-8">
+  					@* <form action="/Home/upInfo" class="form-horizontal" method="post">*@
+                     @using (Html.BeginForm("../Home/upInfo", "", FormMethod.Post, new { @class = "form-horizontal" }))
+                     {
+
+                    
+
+              <div class="form-group">
+                <label for="user-name" class="col-lg-2 control-label">Name</label>
+                <div class="col-lg-8">
+                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Enter your name", id="nm" ,type = "text", required = "required", })
+
+                  @*<input type="text" class="form-control" id="Text4" placeholder="Enter you name" name="Name" required/>*@
+                </div>
+              </div><!-- End form group -->
+                                                         
+             <div class="form-group">
+                <label for="user-name" class="col-lg-2 control-label">City</label>
+                <div class="col-lg-8">
+                    <select class="form-control" name="City" required id="ct">
+              <option>--Select Your City--</option>
+              <option>Islamabad</option>
+              <option>Multan</option>
+              <option>Faisalabad</option>
+              <option>Karachi</option>
+            </select>
+                </div>
+              </div><!-- End form group -->
+
+
+              <div class="form-group">
+                <label for="user-email" class="col-lg-2 control-label" >Email</label>
+                <div class="col-lg-8">
+                  <input type="email" id ="usr" class="form-control"  placeholder="Enter you Email Address" required name="Email"/><span id ="nicmsg"></span>
+                </div>
+              </div><!-- End form group -->
+
+              <div class="form-group">
+                <label for="user-email" class="col-lg-2 control-label">Change Password</label>
+                <div class="col-lg-8">
+                  <input type="password" class="form-control" id="Text3" name="Password" />
+                </div>
+              </div><!-- End form group -->
+
+              <div class="form-group">
+                <label for="user-email" class="col-lg-2 control-label">Confirm Password</label>
+                <div class="col-lg-8">
+                  <input type="password" class="form-control" id="Password1"/><span id="message"></span>
+                </div>
+              </div><!-- End form group -->
+
+
+              <div class="form-group">
+                <label for="user-name" class="col-lg-2 control-label">Address</label>
+                <div class="col-lg-8">
+                  <input type="text" class="form-control" id="ad" placeholder="Enter you address" name="Address" required/>
+                </div>
+              </div><!-- End form group -->
+
+              <div class="form-group">
+                <label for="user-url" class="col-lg-2 control-label">Contact No</label>
+                <div class="col-lg-8">
+                  <input type="text" class="form-control" id="cn" placeholder="e.g  0321-1234567" required name="Contact">
+                </div>
+              </div><!-- End form group -->
+
+
+                                                   
+              <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                  <button type="submit" id ="upd" class="btn btn-primary">Update</button>
+                </div>
+              </div>
+
+             
+
+            @*</form>*@
+                     }
+  				</div>
+  				<div class="col-md-4">
+                      <div class="col-md-6">
+                @{
+                    WebImage photo = null;
+                    var newFileName = "";
+                    var imagePath = "";
+
+                    if (IsPost)
+                    {
+                        photo = WebImage.GetImageFromRequest();
+                        if (photo != null)
+                        {
+                            newFileName = Guid.NewGuid().ToString() + "_" +
+                                Path.GetFileName(photo.FileName);
+                            imagePath = @"ProfilePics\" + newFileName;
+
+                            photo.Save(@"~\" + imagePath);
+                        }
+                    }
+
+                    Session["opo"] = imagePath;
+                    
+
+                }
+                          
+                          @*<script>
+                              var v = @imagePath
+                              $(document).ready(function () {
+                                  $('#lll').click(function () {
+                                      $.getJSON("/BecomeADonor/filing?n=" + v, function (x) { });
+                                  });
+                              });
+                    </script>*@
+                          
+  					  <form action="" method="post" enctype="multipart/form-data">
+                        <fieldset>
+                          <label for="Image"><span>Add a Profile Picture</span></label>
+                          <input type="file" name="Image" />
+                           
+                            <br/>
+                          <input type="submit" id ="lll" value="Upload" />
+                        </fieldset>
+                     </form>
+                          </div>
+                      <div class="col-md-6 pull-right">
+                          @if (imagePath != "")
+                          {
+                            <div class="result">
+                                <img src="~/@imagePath" alt="image" class="propic" />
+                                @*<script>$("#my_image").attr("src", "~/@imagePath");</script>*@
+                            </div>
+                          
+                          }
+                          else if(Model.SourcePath=="../../")
+                          {
+                               <img src="~/Img/profile-pic.jpg" class="propic" id="my_image"/>
+                          }
+                          else
+                          {
+                                <img src="~/@Model.SourcePath" alt="image" class="propic" />   
+                          }
+                        </div>
+  				</div>
+  				
+  			</div><!-- End row -->
+  		</section>
+  	</div><!--End Container-->
+
+ <script>
+     $(document).ready(function () {
+         $('#Password1').on('keyup', function () {
+             if ($(this).val() == $('#Text3').val()) {
+                 $('#message').html('matching').css('color', 'green');
+                 $("#upd").fadeOut("slow");
+             } else {
+                 $('#message').html('not matching').css('color', 'red');
+                 $(this).val() = "";
+                 $("#upd").fadeIn("slow");
+             }
+         });
+     });
+</script>
+  <script>
+      $('#nm').val("@Model.Name");
+      $('#ct').val("@Model.City");
+      $('#usr').val("@Model.Email");
+      $('#ad').val("@Model.Address");
+      $('#cn').val("@Model.Contact");
+  </script>

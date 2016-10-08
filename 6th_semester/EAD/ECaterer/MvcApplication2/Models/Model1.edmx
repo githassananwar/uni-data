@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Database1Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="Database1ModelStoreContainer">
+          <EntitySet Name="caterers" EntityType="Database1Model.Store.caterers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="contact" EntityType="Database1Model.Store.contact" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="users" EntityType="Database1Model.Store.users" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_caterers_users" Association="Database1Model.Store.FK_caterers_users">
+            <End Role="users" EntitySet="users" />
+            <End Role="caterers" EntitySet="caterers" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="caterers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="address" Type="varchar" MaxLength="50" />
+          <Property Name="city" Type="varchar" MaxLength="50" />
+          <Property Name="phone" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="image" Type="varchar" MaxLength="250" />
+          <Property Name="perhead" Type="varchar" MaxLength="50" />
+          <Property Name="services" Type="varchar" MaxLength="1000" />
+          <Property Name="note" Type="varchar" MaxLength="1000" />
+          <Property Name="description" Type="varchar" MaxLength="1000" />
+          <Property Name="workinghours" Type="varchar" MaxLength="50" />
+          <Property Name="fb" Type="varchar" MaxLength="50" />
+          <Property Name="twitter" Type="varchar" MaxLength="50" />
+          <Property Name="social" Type="varchar" MaxLength="50" />
+          <Property Name="userId" Type="int" />
+        </EntityType>
+        <EntityType Name="contact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="phone" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="100" />
+          <Property Name="message" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="firstname" Type="varchar" MaxLength="50" />
+          <Property Name="lastname" Type="varchar" MaxLength="50" />
+          <Property Name="username" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+          <Property Name="rank" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_caterers_users">
+          <End Role="users" Type="Database1Model.Store.users" Multiplicity="0..1" />
+          <End Role="caterers" Type="Database1Model.Store.caterers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="caterers">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Database1Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Database1Entities4" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="users" EntityType="Database1Model.user" />
+          <EntitySet Name="caterers" EntityType="Database1Model.caterer" />
+          <AssociationSet Name="FK_caterers_users" Association="Database1Model.FK_caterers_users">
+            <End Role="user" EntitySet="users" />
+            <End Role="caterer" EntitySet="caterers" />
+          </AssociationSet>
+          <EntitySet Name="contacts" EntityType="Database1Model.contact" />
+        </EntityContainer>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="firstname" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="lastname" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="password" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Type="String" Name="rank" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="caterers" Relationship="Database1Model.FK_caterers_users" FromRole="user" ToRole="caterer" />
+        </EntityType>
+        <EntityType Name="caterer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="address" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="city" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="phone" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="email" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="image" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="perhead" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="services" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="note" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="description" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="workinghours" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="fb" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="twitter" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="social" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="userId" />
+          <NavigationProperty Name="user" Relationship="Database1Model.FK_caterers_users" FromRole="caterer" ToRole="user" />
+        </EntityType>
+        <Association Name="FK_caterers_users">
+          <End Type="Database1Model.user" Role="user" Multiplicity="0..1" />
+          <End Type="Database1Model.caterer" Role="caterer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="caterer">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="contact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="phone" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="email" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="message" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities4">
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="Database1Model.user">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="rank" ColumnName="rank" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="firstname" ColumnName="firstname" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="caterers">
+            <EntityTypeMapping TypeName="Database1Model.caterer">
+              <MappingFragment StoreEntitySet="caterers">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="social" ColumnName="social" />
+                <ScalarProperty Name="twitter" ColumnName="twitter" />
+                <ScalarProperty Name="fb" ColumnName="fb" />
+                <ScalarProperty Name="workinghours" ColumnName="workinghours" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="services" ColumnName="services" />
+                <ScalarProperty Name="perhead" ColumnName="perhead" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contacts">
+            <EntityTypeMapping TypeName="Database1Model.contact">
+              <MappingFragment StoreEntitySet="contact">
+                <ScalarProperty Name="message" ColumnName="message" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

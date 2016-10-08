@@ -1,0 +1,65 @@
+﻿@model MvcApplication2.Models.caterer
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+    <div class="header-text hidden-xs"  >
+       <script>
+           $(document).ready(function () {
+               changeBackground();
+           });
+       </script>
+        <div class="col-md-12 text-center" id="pro" style="background-size: cover;  -o-filter: blur(5px); filter: blur(5px);"  >
+            
+            <h1 style="color: #fff;">
+                <br />
+                <br /><br /><br /><br /><br /><br />
+                <span>Welcome To <strong>eCaterers</strong></span>
+            </h1>
+            <h2 style="color: #fff;">
+                <span>Search for the best caterers around you!</span>
+            </h2>
+            <br>
+            <div  class="">
+                 
+            <form action="/Caterer/findCaterer" class="form-horizontal" method="post">
+                 &nbsp &nbsp &nbsp  &nbsp &nbsp 
+              <div class="form-group">
+                  <div class="col-md-1"></div>
+         <div class="col-md-4">
+      			<input class="form-control" type="text" name="name" placeholder="Enter Company Name" />
+
+        </div>
+        <div class="col-md-4">
+            <select class="form-control" name="city">
+              <option>--Select Your City--</option>
+              <option>Islamabad</option>
+              <option>Lahore</option>
+              <option>Faisalabad</option>
+              <option>Karachi</option>
+            </select>
+        </div>
+
+        <div style="text-align:left">
+        <button type="submit" class="btn btn-primary">Search</button>
+      </div>
+           </div>
+             </form>
+           
+               
+
+                <a class="btn btn-lg btn-warning" href="/Caterer/ViewCaterer">View Caterers</a>&nbsp;&nbsp;
+                   @if (HttpContext.Current.Session["signin"] == null)
+                   {
+                           <a class="btn btn-lg btn-danger" href="/Home/Login">Add Caterers</a>
+                              
+                   }
+                       else if (HttpContext.Current.Session["signin"] == "done")
+                        {
+                              <a class="btn btn-lg btn-danger" href="/Caterer/AddCaterer">Add Caterers</a>
+                        }  
+            </div>
+            <br /> <br /> <br /> <br /> <br /><br />
+    </div>
+    </div>

@@ -1,0 +1,103 @@
+@{
+    Layout = "~/Views/Admin/_Layout.cshtml";
+}
+
+@model List<MvcApplication2.Models.caterer>  
+
+ <div id="page-wrapper">
+            <div class="container-fluid">
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Admin
+                            <small>eCaterer</small>
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i>  <a href="../../Admin/index">Dashboard</a>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-file"></i> Blank Page
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container-fluid -->
+     <div class="container">
+  <h2>Dynamic Tabs</h2>
+  <ul class="nav nav-tabs">
+    
+    <li><a data-toggle="tab" href="#menu1">Remove Post</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <div class="container" id ="abts">
+  <div class="jumbotron">
+    
+  </div>
+       </div>
+      
+
+
+    </div>
+
+
+    <div id="menu1" class="tab-pane fade">
+        
+        <div class="container" id ="abtus">
+  <div class="jumbotron">
+    <h1 style ="text-align:center">...Remove Post...</h1>
+  </div>
+       </div>
+
+<div class="container">
+  		<section>
+  			<div class="page-header" >
+  				<h2>Properties:@if (Model.Count != 0)
+                 {<small> These are results</small>}
+                 else
+                 {<small> No Result Found</small>}
+  				</h2>
+  			</div>
+
+  			<div class="row">    
+              @foreach (var x in Model)
+              {
+                     <div class="col-md-4">
+  					<blockquote>
+                         <p><img src="@x.image" class="pic" style="float:left"/>Name: @x.name
+<br />City: @x.city <br />Phone No: @x.phone</p><br />
+  						<p>Charges/Head: @x.perhead <br /></p>
+  					</blockquote>
+                         @Html.ActionLink("Delete", "./../Admin/removePost" ,new {Id=x.Id}, new { @class = "btn btn-primary btn-large"})
+  				</div>
+              }
+
+  			</div><!-- End row -->
+  		</section>
+  	</div><!--End Container-->
+
+
+
+    </div>
+  </div>
+</div>
+     </div>
+
+@section s1{
+    @*<link href="../../Content/ihover.css" rel="stylesheet">*@
+<style>
+.pic
+            {
+                width: 80px;
+                height: 80px;
+                margin-right : 4px;
+            }
+    </style>
+}
+

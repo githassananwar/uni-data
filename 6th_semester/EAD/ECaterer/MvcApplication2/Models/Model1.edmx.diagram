@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="96fa6fc1e11e46718d3d8917d2708894" Name="Diagram1" ZoomLevel="98">
+        <EntityTypeShape EntityType="Database1Model.user" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.caterer" Width="1.5" PointX="0.875" PointY="0.5" />
+        <AssociationConnector Association="Database1Model.FK_caterers_users" />
+        <EntityTypeShape EntityType="Database1Model.contact" Width="1.5" PointX="5.375" PointY="2.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Database1Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Database1Entities4" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="users" EntityType="Database1Model.user" />
+    <EntitySet Name="caterers" EntityType="Database1Model.caterer" />
+    <AssociationSet Name="FK_caterers_users" Association="Database1Model.FK_caterers_users">
+      <End Role="user" EntitySet="users" />
+      <End Role="caterer" EntitySet="caterers" />
+    </AssociationSet>
+    <EntitySet Name="contacts" EntityType="Database1Model.contact" />
+  </EntityContainer>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="firstname" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="lastname" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="password" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Type="String" Name="rank" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="caterers" Relationship="Database1Model.FK_caterers_users" FromRole="user" ToRole="caterer" />
+  </EntityType>
+  <EntityType Name="caterer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="address" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="city" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="phone" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="email" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="image" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="perhead" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="services" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="note" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="description" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="workinghours" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="fb" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="twitter" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="social" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="userId" />
+    <NavigationProperty Name="user" Relationship="Database1Model.FK_caterers_users" FromRole="caterer" ToRole="user" />
+  </EntityType>
+  <Association Name="FK_caterers_users">
+    <End Type="Database1Model.user" Role="user" Multiplicity="0..1" />
+    <End Type="Database1Model.caterer" Role="caterer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="caterer">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="contact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="phone" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="email" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="message" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

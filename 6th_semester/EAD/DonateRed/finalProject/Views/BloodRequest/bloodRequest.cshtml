@@ -1,0 +1,109 @@
+﻿@model finalProject.Models.Accepter
+
+
+  	<!-- Feedback-->
+  	<div class="container">
+  		<section>
+  			<div class="page-header" >
+  				<h2>Request For Blood</h2>
+  			</div>
+     
+  			<div class="row">
+  				<div class="col-md-8">
+  					@* <form action="/BecomeADonor/add" class="form-horizontal" method="post">*@
+                     @using (Html.BeginForm("../BloodRequest/addRequest", "", FormMethod.Post, new { @class = "form-horizontal" }))
+                    {
+
+                    
+
+              <div class="form-group">
+                <label for="user-name" class="col-lg-2 control-label">Name</label>
+                <div class="col-lg-8">
+                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Enter your name" , type = "text", required = "required"})
+
+                  @*<input type="text" class="form-control" id="Text4" placeholder="Enter you name" name="Name" required/>*@
+                </div>
+              </div><!-- End form group -->
+
+              <div class="form-group">
+                <label for="user-email" class="col-lg-2 control-label">Gender</label>
+                  <div class="col-lg-8">
+                   <label class="radio-inline">
+                    <input type="radio" id="inlineRadio1" value="Male" name="Gender"/> Male
+                    </label>
+                       <label class="radio-inline">
+                    <input type="radio" id="inlineRadio2" value="Female" name="Gender"/> Female     
+                    </label>
+                        </div>
+              </div><!-- End form group -->
+
+              <div class="form-group">
+                <label for="user-name" class="col-lg-2 control-label">Blood Group</label>
+                <div class="col-lg-8">
+                    <select class="form-control" name="BloodGroup" required>
+              <option>--Select Your Blood Group--</option>
+              <option>A+</option>
+              <option>A-</option>
+              <option>B+</option>
+              <option>B-</option>
+            </select>
+                </div>
+              </div><!-- End form group -->
+
+                                                           
+             <div class="form-group">
+                <label for="user-name" class="col-lg-2 control-label">City</label>
+                <div class="col-lg-8">
+                    <select class="form-control" name="City" required>
+              <option>--Select Your City--</option>
+              <option>Islamabad</option>
+              <option>Multan</option>
+              <option>Faisalabad</option>
+              <option>Karachi</option>
+            </select>
+                </div>
+              </div><!-- End form group -->
+
+
+              <div class="form-group">
+                <label for="user-email" class="col-lg-2 control-label" >Email</label>
+                <div class="col-lg-8">
+                  <input type="email" class="form-control" id="Text5" placeholder="Enter you Email Address" required name="Email"/>
+                </div>
+              </div><!-- End form group -->
+
+                         
+
+              <div class="form-group">
+                <label for="user-url" class="col-lg-2 control-label">Contact No</label>
+                <div class="col-lg-8">
+                  <input type="text" class="form-control" id="Text6" placeholder="e.g  0321-1234567" required name="Contact">
+                </div>
+              </div><!-- End form group -->
+
+
+                                                   
+              <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+
+             
+
+            @*</form>*@
+                     }
+  				</div>
+  				<div class="col-md-4">
+  					
+  				</div>
+  				
+  			</div><!-- End row -->
+  		</section>
+  	</div><!--End Container-->
+
+
+
+
+
+

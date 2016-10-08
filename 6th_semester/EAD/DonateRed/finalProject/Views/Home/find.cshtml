@@ -1,0 +1,148 @@
+﻿
+@model List<finalProject.Models.Donor>
+
+
+  	<!-- jumbotron-->
+  	<div class="jumbotron" id="jumbo">
+  		<div class="container text-center">
+  			<h1>Online Blood Bank</h1>
+  			<p>Share a little, care a little – Donate Blood.</p>
+
+
+            <form action="/Home/find" class="form-horizontal" method="post">
+              <div class="form-group">
+          <div class="col-md-4">
+      			<select class="form-control" name="City" id="ct">
+                      <option>All</option>
+              <option>Islamabad</option>
+              <option>Multan</option>
+              <option>Faisalabad</option>
+              <option>Karachi</option>
+            </select>
+
+        </div>
+        <div class="col-md-4">
+            <select class="form-control" name="BloodGroup"required id="bd">
+              <option>A+</option>
+              <option>A-</option>
+              <option>B+</option>
+              <option>B-</option>
+            </select>
+        </div>
+
+        <div align="left">
+        <button type="submit" class="btn btn-primary">Search</button>
+      </div>
+              </div>
+             </form>
+
+  		</div><!-- End container -->
+  	</div><!-- End jumbotron-->
+
+  	<!-- Feedback-->
+  	<div class="container">
+  		<section>
+  			<div class="page-header" >
+  				<h2>Donors:@if (Model.Count != 0)
+                 {<small> These are results</small>}
+                 else
+                 {<small> No Result Found</small>}
+  				</h2>
+  			</div>
+
+  			<div class="row">    
+              @foreach (var x in Model)
+              {
+                  if(x.rank!="Admin")
+                  {
+                  String s = x.SourcePath;
+                  if(x.SourcePath == "../../")
+                                      {
+                                          s = "../../Img/Pink-Dot-300x300.jpg";
+                                      }
+                     <div class="col-md-4">
+  					<blockquote>
+
+                         <p><img src="@s" class="pic" style="float:left"/>Name: @x.Name<br /> Blood Group: @x.BloodGroup<br /> City: @x.City</p><br />
+  						<p>Contact No: @x.Contact <br /> Email: @x.Email <br /> Address: @x.Address</p>
+  					</blockquote>
+  				</div>
+              }
+
+              }
+ 
+                 
+                  <script>
+                      $('#ct').val("@Session["cty"].ToString()");
+                      $('#bd').val("@Session["bdgroup"].ToString()");
+                  </script>
+                 
+                  
+                      
+  				@*<div class="col-md-4">
+  					<blockquote>
+                         <p><img src="~/Img/paul.jpg" class="pic" style="float:left"/>Name: Paul Walker<br /> Blood Group: B+<br /> City: Lahore</p><br />
+  						<p>Contact No: 0313-7654321 <br /> Email:paulWalker@gmail.com <br /> Address:h#34 defence Y-block Lahore</p>
+  					</blockquote>
+  				</div>
+  				<div class="col-md-4">
+  					<blockquote>
+                           <p><img src="~/Img/enrique.jpg" class="pic" style="float:left"/>Name: Enrique Iglesias<br /> Blood Group: A-<br /> City: Lahore</p><br />
+  						<p>Contact No: 0313-7654321 <br /> Email:enrique321@gmail.com <br /> Address:h#34 defence Y-block Lahore</p>
+  					</blockquote>
+  				</div>
+  				<div class="col-md-4">
+  					<blockquote>
+  						   <p><img src="~/Img/abd.jpg" class="pic" style="float:left"/>Name: AB De Villiers<br /> Blood Group: A+<br /> City: Lahore</p><br />
+  						<p>Contact No: 0313-7654321 <br /> Email:abd123@gmail.com <br /> Address:h#34 defence Y-block Lahore</p>
+  						
+  					</blockquote>
+  				</div>*@
+  			</div><!-- End row -->
+  		</section>
+  	</div><!--End Container-->
+
+
+
+<!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jsTicker/chart.js"></script>
+@*<script src="~/Scripts/jsTicker/bootstrap.js"></script>*@
+<script src="~/Scripts/jsTicker/prism.js"></script>
+<script src="~/Scripts/jsTicker/jquery.mCustomScrollbar.min.js"></script>
+<script src="~/Scripts/jsTicker/jquery.newsTicker.js"></script>
+    <script>
+
+
+    		$(window).load(function(){
+	            $('code.language-javascript').mCustomScrollbar();
+	        });
+            var nt_title = $('#nt-title').newsTicker({
+                row_height: 40,
+                max_rows: 1,
+                duration: 3000,
+                pauseOnHover: 0
+            });
+            var nt_example1 = $('#nt-example1').newsTicker({
+                row_height: 120,
+                max_rows: 3,
+                duration: 4000,
+                prevButton: $('#nt-example1-prev'),
+                nextButton: $('#nt-example1-next')
+            });
+           
+        
+            
+   
+        </script>
+
+        <script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-48039933-1', 'risq.github.io');
+			ga('send', 'pageview');
+		</script>
+
+

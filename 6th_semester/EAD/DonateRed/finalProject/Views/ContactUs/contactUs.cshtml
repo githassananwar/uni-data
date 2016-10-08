@@ -1,0 +1,70 @@
+﻿@model finalProject.Models.Contact
+
+
+<!-- Contact -->
+
+  <div class="container">
+    <section>
+      <div class="page-header" id="contact">
+          <h2>Contact Us.<small> Contact us for more.</small></h2>
+        </div><!-- End Page Header -->
+
+        <div class="row">
+          <div class="col-lg-4">
+            <p>Send us a message, or contact us from the address below</p>
+
+
+            <address>
+              <strong>DonateRED Pvt Ltd.</strong><br/>
+              111, Head Office <br/>
+              Plaza No. 34<br/>
+              Islamabad - 50900<br/>
+              P: +92 9999999<br />
+              fax: 559-358033-435
+            </address>
+          </div>
+          
+          <div class="col-lg-8">
+            @*<form action="" class="form-horizontal" method="post">*@
+                   @using (Html.BeginForm("../ContactUs/addContact", "", FormMethod.Post, new { @class = "form-horizontal" }))
+                    {
+              <div class="form-group">
+                <label for="user-name" class="col-lg-2 control-label">Name</label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" id="user-name" placeholder="Enter you name" name="Name" required>
+                </div>
+              </div><!-- End form group -->
+
+              <div class="form-group">
+                <label for="user-email" class="col-lg-2 control-label">Email</label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" id="user-email" placeholder="Enter you Email Address" name="Email" required>
+                </div>
+              </div><!-- End form group -->
+
+
+              <div class="form-group">
+                <label for="user-message" class="col-lg-2 control-label">Any Message</label>
+                <div class="col-lg-10">
+                  <textarea id="user-message" class="form-control" 
+                  cols="20" rows="10" placeholder="Enter your Message" name="Message" required></textarea>
+                </div>
+              </div><!-- End form group -->
+
+              <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+
+                   }
+
+            @*</form>*@
+          </div>
+        </div><!-- End the row -->
+
+    </section>
+  </div>
+
+
+

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities4">
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="Database1Model.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="rank" ColumnName="rank" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="caterers">
+      <EntityTypeMapping TypeName="Database1Model.caterer">
+        <MappingFragment StoreEntitySet="caterers">
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="social" ColumnName="social" />
+          <ScalarProperty Name="twitter" ColumnName="twitter" />
+          <ScalarProperty Name="fb" ColumnName="fb" />
+          <ScalarProperty Name="workinghours" ColumnName="workinghours" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="services" ColumnName="services" />
+          <ScalarProperty Name="perhead" ColumnName="perhead" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contacts">
+      <EntityTypeMapping TypeName="Database1Model.contact">
+        <MappingFragment StoreEntitySet="contact">
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <title>DonateRed</title>
+    <!-- Bootstrap core CSS -->
+    @*    <link href="~/Content/cssTicker/bootstrap.css" rel="stylesheet" />*@
+    <!-- Custom styles for this template -->
+        <!-- Custom Fonts -->
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/cssTicker/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/cssTicker/prism.css" rel="stylesheet" />
+    <link href="~/Content/cssTicker/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/cssTicker/main.css" rel="stylesheet" />
+
+
+    <link rel="icon" href="~/Img/i3.jpg" type="image/x-icon" />
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+    <script src="~/Scripts/bootstrap.js"></script>
+    <style>
+        body
+        {
+            padding-top: 40px;
+        }
+
+        #jumbo
+        {
+            background-image: url("../../Img/blood4.jpg");
+            color: #6E6E6E;
+        }
+
+        .pic
+        {
+            height: 80px;
+            width: 80px;
+            margin-right: 4px;
+        }
+
+        .socialPics
+        {
+            height: 50px;
+            width: 50px;
+        }
+
+        #formbg
+        {
+            background-color: #F78181;
+        }
+
+        #aboutPic
+        {
+            width: 400px;
+        }
+
+        .carousel-inner
+        {
+            width: 100%;
+            max-height: 400px !important;
+        }
+
+        .propic
+        {
+            height: 120px;
+            width: 100px;
+            float: right;
+        }
+    </style>
+    <script>
+        $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').focus()
+        });
+        $(document).ready(function () {
+            $('#pwd').focusout(function () {
+                if ($(this).val().length == 0) {
+                    $('#spn').html('Enter Password').css('color', 'red');
+                }
+                else {
+                    $.getJSON("/Home/checkPWD?n=" + $('#usrn').val() + "&p=" + $('#pwd').val(), function (x) {
+                        if (x == false) {
+                            $('#spn').html('Invalid Email or Password. Enter again').css('color', 'red');
+                            document.getElementById("pwd").value = "";
+                        }
+                    });
+                }
+            });
+        });
+
+
+
+    </script>
+    @RenderSection("chck", false)
+</head>
+
+
+
+<body data-spy="scroll" data-target="#my-navbar">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="my-navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a href="../../Home/HtmlPage1" class="navbar-brand" style="color: red">DonateRED</a>
+            </div>
+            <!-- Navbar Header-->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+
+                @if (HttpContext.Current.Session["signin"] == null)
+                {
+                    <a href="#" class="btn btn-primary navbar-btn navbar-right" data-toggle="modal" data-target="#myModal">Sign In</a>
+                }
+                else if (Session["signin"] == "done")
+                {
+                    <ul class="nav navbar-right top-nav">
+                   <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> @Session["uname"] <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+            
+                        <li>
+                            <a href="/Home/UpdateInfo"><i class="fa fa-fw fa-gear"></i> Update</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="/Home/logout"><i class="fa fa-fw fa-power-off"></i> Sign Out</a>
+                        </li>
+                    </ul>
+                </li>
+                   </ul>@* 
+                
+                    <a href="/Home/logout" class="btn btn-primary navbar-btn navbar-right">Sign out</a>
+                    <a href="#" class="navbar-right"><span style="color: white">Hi, @Session["uname"]</span></a>*@
+                }
+@*                @if (Session["abc"] == "wrong")
+                {
+                    <script>alert("ERROR! Cannot SignIn...\n\nEither Username or Password Incorrect")</script>
+                    Session["abc"] = "null";
+
+                }   *@
+                  		
+@*<a href="#" class="btn btn-primary navbar-btn navbar-right" data-toggle="modal" data-target="#myModal">Sign In</a>*@
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "../Home/HtmlPage1") @* <a href="../../Home/HtmlPage1">Home</a>*@ </li>
+                    <li>@Html.ActionLink("About us", "../AboutUs/AboutUs") @*<a href="../../AboutUs/AboutUs">About us</a>*@ </li>
+                    <li>@Html.ActionLink("Gallery", "../Gallery/Gallery")  @*<a href="../../Gallery/Gallery">Gallery</a> *@</li>
+                    <li>@Html.ActionLink("Become a donor", "../BecomeADonor/donor")  @*<a href="../../BecomeADonor/donor">Become a donor</a>*@  </li>
+                    <li>@Html.ActionLink("Add blood request", "../BloodRequest/bloodRequest")  @*<a href="../../BecomeADonor/donor">Become a donor</a>*@  </li>
+                    <li>@Html.ActionLink("Contact us", "../ContactUs/contactUs")  @*<a href="../../ContactUs/contactUs">Contact Us</a>*@ </li>
+                </ul>
+            </div>
+        </div>
+        <!-- End Container-->
+    </nav>
+    <!-- End navbar -->
+
+    @RenderBody();
+    <!-- Footer -->
+
+    <footer>
+        <hr>
+        <div class="container text-center">
+            <h3>Want to Subscribe??</h3>
+            <p>Enter your name and email</p>
+
+            <form action="" class="form-inline">
+                <div class="form-group">
+                    <label for="subscription">Subscribe</label>
+                    <input type="text" class="form-control" id="Text2" placeholder="Your name" />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="text" class="form-control" id="Text3" placeholder="Enter your Email" />
+                </div>
+                <button type="submit" class="btn btn-default">Subscribe</button>
+
+            </form>
+            @*<div  style="background-color:#FD6565">*@
+            <hr>
+            <ul class="list-inline">
+                <li><a href="http://www.facebook.com/askorama">
+                    <img src="~/Img/fb.png" class="socialPics" /></a></li>
+                <li><a href="http://www.twitter.com/wiredwiki">
+                    <img src="~/Img/twitter.png" class="socialPics" /></a></li>
+                <li><a href="http://www.youtube.com/wiredwiki">
+                    <img src="~/Img/utube.png" class="socialPics" /></a></li>
+            </ul>
+
+            <p>&copy; Copyright 2014</p>
+        </div>
+        </div><!-- end Container-->
+
+
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+                </div>
+                <div class="modal-body">
+
+                    <form action="/Home/SignIn" class="form-horizontal" method="post">
+                        <div class="form-group">
+                            <label for="user-name" class="col-lg-2 control-label">Username</label>
+                            <div class="col-lg-6">
+                                <input type="email" class="form-control" id="usrn" placeholder="Email" name="usname" required>
+                            </div>
+                        </div>
+                        <!-- End form group -->
+                        <div class="form-group">
+                            <label for="user-name" class="col-lg-2 control-label">Password</label>
+                            <div class="col-lg-6">
+                                <input type="password" class="form-control" id="pwd" placeholder="Password" name="pwd" required>
+                            </div>
+                            <span id="spn"></span>
+                        </div>
+                        <!-- End form group -->
+                        <div class="form-group">
+                            <div class="col-lg-6 col-lg-offset-2">
+                                <button type="submit" class="btn btn-primary">Sign In</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="location.href = '../../BecomeADonor/donor';">Create an account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

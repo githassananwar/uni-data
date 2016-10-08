@@ -1,0 +1,299 @@
+﻿@model finalProject.Models.Donor
+  	<!-- jumbotron-->
+  	<div class="jumbotron" id="jumbo">
+  		<div class="container text-center">
+  			<h1>Online Blood Bank</h1>
+  			<p>Share a little, care a little – Donate Blood.</p>
+
+            <form action="/Home/find" class="form-horizontal" method="post">
+              <div class="form-group">
+          <div class="col-md-4">
+      			<select class="form-control" name="City">
+                      <option>All</option>
+              <option>Islamabad</option>
+              <option>Multan</option>
+              <option>Faisalabad</option>
+              <option>Karachi</option>
+            </select>
+
+        </div>
+        <div class="col-md-4">
+            <select class="form-control" name="BloodGroup" required>
+              <option>A+</option>
+              <option>A-</option>
+              <option>B+</option>
+              <option>B-</option>
+            </select>
+        </div>
+
+        <div align="left">
+        <button type="submit" class="btn btn-primary">Search</button>
+      </div>
+              </div>
+             </form>
+
+  		</div><!-- End container -->
+  	</div><!-- End jumbotron-->
+
+  	<!-- Feedback-->
+  	<div class="container">
+  		<section>
+  			<div class="page-header" >
+  				<h2>DonateRed:<small> Donate Today, You Never Know When You Need It!</small></h2>
+  			</div>
+  			<div class="row">
+  				<div class="col-md-7">
+                      					<div id="nt-example2-container">
+		                <ul id="nt-example2">
+		                   <li data-infos="In order to extend shelf-life and to provide maximum benefits from each blood donation, whole blood fractionates into several products. Most common products are Red blood Cells (RBCs), platelets, plasma, cryoprecipitate and fresh frozen plasma (FFP). Units of packed red cells are made by removing as much of the plasma as possible from whole blood units.  ">
+		                    	<i class="fa fa-fw fa-play state"></i>
+		                    	<span class="hour"></span> ABOUT BLOOD & INHERITANCE.
+		                    </li>
+		                    <li data-infos="Every 2 seconds someone needs blood.Accident victims, premature babies, patients undergoing major surgeries require whole blood, where your blood after testing is used directly. Patients suffering from trauma, anemia, and other surgeries require only red blood cells, which is separated from your blood. Similarly blood platelets are used for cancer patients undergoing chemotherapy or for those undergoing treatment for dengue fever etc.">
+		                    	<i class="fa fa-fw fa-play state"></i>
+		                    	<span class="hour"></span> WHO NEEDS BLOOD.
+		                    </li>
+
+		                    <li data-infos="Be in generally good health and feeling well.Weigh at least 110 pounds.Be 17 years of age up to 85.There may be additional requirements for some automated donations.Eat Iron rich foods.There may be additional requirements for some automated donations.Eat Iron rich foods.">
+		                    	<i class="fa fa-fw fa-play state"></i>
+		                    	<span class="hour"></span> BLOOD DONATION BASIC TIPS
+		                    </li>
+		                    <li data-infos="Will not feel drained or tired if you continue to drink fluids and have a good meal.
+You can resume your normal activities after donating blood, though you are asked to refrain from exercise or heavy weight lifting for twelve hours after donation.
+Donating blood will not leave you low of blood; in fact you will still have surplus blood after the donation.">
+		                    	<i class="fa fa-fw fa-play state"></i>
+		                    	<span class="hour"></span> Blood Donation Myths.
+		                    </li>
+		                    <li data-infos="High levels of iron in the blood will make a person more susceptible to heart disease. Excessive iron in the blood can cause oxidation of cholesterol.Blood donors will also help the body reduce the number of red blood cells in the blood.">
+		                    	<i class="fa fa-fw fa-play state"></i>
+		                    	<span class="hour"></span> BENEFITS TO THE BLOOD DONORS.
+		                    </li>
+		                    <li data-infos="A common Blood disorder condition that is caused by an acquired or inhered abnormality of red Blood cells to provide adequate oxygen supplies to body tissues.">
+		                    	<i class="fa fa-fw fa-play state"></i>
+		                    	<span class="hour"></span> BLOOD DISEASES & DISORDERS
+		                    </li>
+		                    <li data-infos="Make sure that you eat something in the three hours before you donate. Tense and relax your calf and thigh muscles and move your legs and feet during and immediately after your donation.Stay for at least 15 minutes in the refreshment area and have more to drink and a snack.">
+		                    	<i class="fa fa-fw fa-play state"></i>
+		                    	<span class="hour"></span> THINGS TO KNOW
+		                    </li>
+		                </ul>
+		                <div id="nt-example2-infos-container">
+			                <div id="nt-example2-infos-triangle"></div>
+			                <div id="nt-example2-infos" class="row">
+			                	<div class="col-xs-4 centered">
+				                	<div class="infos-hour">
+				                		
+				                	</div>
+				                	<i class="fa fa-arrow-left" id="nt-example2-prev"></i>
+				                	<i class="fa fa-arrow-right" id="nt-example2-next"></i>
+			                	</div>
+			                	<div class="col-xs-8">
+			                		<div class="infos-text">In order to extend shelf-life and to provide maximum benefits from each blood donation, whole blood fractionates into several products. Most common products are Red blood Cells (RBCs), platelets, plasma, cryoprecipitate and fresh frozen plasma (FFP). Units of packed red cells are made by removing as much of the plasma as possible from whole blood units.  </div>
+			                	</div>
+			                </div>
+		                </div>
+		            </div>
+  				</div>
+                <div class="col-md-4 pull-right">
+                    <div id="nt-example1-container">
+						@*<i class="fa fa-arrow-up" id="nt-example1-prev"></i>*@
+                        <div class="title" id="examples" style="background-color:#B50B0B">
+                            <h3>Blood Requests</h3>
+                            
+                            </div>
+		                <ul id="nt-example1">
+                             @foreach (var y in ViewBag.mydata)                              
+                            {
+		                    <li><p>Name: @y.Name<br /> Blood Request: <b>@y.BloodGroup</b><br /> City: @y.City<br />
+  						Contact No: @y.Contact <br /> Email: @y.Email <br /> </p></li>
+                             }
+		                 @*   <li>Curabitur porttitor ante eget hendrerit adipiscing. Maecenas at magna. <a href="#">Read more...</a></li>
+		                    <li>Praesent ornare nisl lorem, ut condimentum lectus gravida ut. <a href="#">Read more...</a></li>
+		                    <li>Nunc ultrices tortor eu massa placerat posuere. Vivamus viverra sagittis. <a href="#">Read more...</a></li>
+		                    <li>Morbi sodales tellus sit amet leo congue bibendum. Ut non mauris eu neque. <a href="#">Read more...</a></li>
+		                    <li>In pharetra suscipit orci sed viverra. Praesent at sollicitudin tortor, id. <a href="#">Read more...</a> </li>
+		                    <li>Maecenas nec ligula sed est suscipit aliquet sed eget ipsum, suspendisse. <a href="#">Read more...</a></li>
+		                    <li>Onec bibendum consectetur diam, nec euismod urna venenatis eget.. <a href="#">Read more...</a> </li>*@
+		                </ul>
+                        <i class="fa fa-arrow-up" id="nt-example1-prev"></i>
+		                <i class="fa fa-arrow-down" id="nt-example1-next"></i>
+		            </div>
+                </div>
+  			</div><!-- End row -->
+  		</section>
+  	</div><!--End Container-->
+
+
+<!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jsTicker/chart.js"></script>
+@*<script src="~/Scripts/jsTicker/bootstrap.js"></script>*@
+<script src="~/Scripts/jsTicker/prism.js"></script>
+<script src="~/Scripts/jsTicker/jquery.mCustomScrollbar.min.js"></script>
+<script src="~/Scripts/jsTicker/jquery.newsTicker.js"></script>
+    <script>
+
+
+    		$(window).load(function(){
+	            $('code.language-javascript').mCustomScrollbar();
+	        });
+            var nt_title = $('#nt-title').newsTicker({
+                row_height: 40,
+                max_rows: 1,
+                duration: 3000,
+                pauseOnHover: 0
+            });
+            var nt_example1 = $('#nt-example1').newsTicker({
+                row_height: 120,
+                max_rows: 3,
+                duration: 4000,
+                prevButton: $('#nt-example1-prev'),
+                nextButton: $('#nt-example1-next')
+            });
+           
+        
+            
+   
+        </script>
+
+        <script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-48039933-1', 'risq.github.io');
+			ga('send', 'pageview');
+		</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Fixed navbar -->
+    
+
+	
+
+@*	<div class="white">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-push-6 centered">
+					<div id="nt-example2-container">
+		                <ul id="nt-example2">
+		                   <li data-infos="In order to extend shelf-life and to provide maximum benefits from each blood donation, whole blood fractionates into several products. Most common products are Red blood Cells (RBCs), platelets, plasma, cryoprecipitate and fresh frozen plasma (FFP). Units of packed red cells are made by removing as much of the plasma as possible from whole blood units.  ">
+		                    	<i class="fa fa-fw fa-play state"></i>
+		                    	<span class="hour"></span> ABOUT BLOOD & INHERITANCE.
+		                    </li>
+		                    <li data-infos="Every 2 seconds someone needs blood.Accident victims, premature babies, patients undergoing major surgeries require whole blood, where your blood after testing is used directly. Patients suffering from trauma, anemia, and other surgeries require only red blood cells, which is separated from your blood. Similarly blood platelets are used for cancer patients undergoing chemotherapy or for those undergoing treatment for dengue fever etc.">
+		                    	<i class="fa fa-fw fa-play state"></i>
+		                    	<span class="hour"></span> WHO NEEDS BLOOD.
+		                    </li>
+
+		                    <li data-infos="Be in generally good health and feeling well.Weigh at least 110 pounds.Be 17 years of age up to 85.There may be additional requirements for some automated donations.Eat Iron rich foods.There may be additional requirements for some automated donations.Eat Iron rich foods.">
+		                    	<i class="fa fa-fw fa-play state"></i>
+		                    	<span class="hour"></span> BLOOD DONATION BASIC TIPS
+		                    </li>
+		                    <li data-infos="Will not feel drained or tired if you continue to drink fluids and have a good meal.
+You can resume your normal activities after donating blood, though you are asked to refrain from exercise or heavy weight lifting for twelve hours after donation.
+Donating blood will not leave you low of blood; in fact you will still have surplus blood after the donation.">
+		                    	<i class="fa fa-fw fa-play state"></i>
+		                    	<span class="hour"></span> Blood Donation Myths.
+		                    </li>
+		                    <li data-infos="High levels of iron in the blood will make a person more susceptible to heart disease. Excessive iron in the blood can cause oxidation of cholesterol.Blood donors will also help the body reduce the number of red blood cells in the blood.">
+		                    	<i class="fa fa-fw fa-play state"></i>
+		                    	<span class="hour"></span> BENEFITNS TO THE BLOOD DONORS.
+		                    </li>
+		                    <li data-infos="A common Blood disorder condition that is caused by an acquired or inhered abnormality of red Blood cells to provide adequate oxygen supplies to body tissues.">
+		                    	<i class="fa fa-fw fa-play state"></i>
+		                    	<span class="hour"></span> BLOOD DISEASES & DISORDERS
+		                    </li>
+		                    <li data-infos="Make sure that you eat something in the three hours before you donate. Tense and relax your calf and thigh muscles and move your legs and feet during and immediately after your donation.Stay for at least 15 minutes in the refreshment area and have more to drink and a snack.">
+		                    	<i class="fa fa-fw fa-play state"></i>
+		                    	<span class="hour"></span> THINGS TO KNOW
+		                    </li>
+		                </ul>
+		                <div id="nt-example2-infos-container">
+			                <div id="nt-example2-infos-triangle"></div>
+			                <div id="nt-example2-infos" class="row">
+			                	<div class="col-xs-4 centered">
+				                	<div class="infos-hour">
+				                		
+				                	</div>
+				                	<i class="fa fa-arrow-left" id="nt-example2-prev"></i>
+				                	<i class="fa fa-arrow-right" id="nt-example2-next"></i>
+			                	</div>
+			                	<div class="col-xs-8">
+			                		<div class="infos-text">In order to extend shelf-life and to provide maximum benefits from each blood donation, whole blood fractionates into several products. Most common products are Red blood Cells (RBCs), platelets, plasma, cryoprecipitate and fresh frozen plasma (FFP). Units of packed red cells are made by removing as much of the plasma as possible from whole blood units.  </div>
+			                	</div>
+			                </div>
+		                </div>
+		            </div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+*@
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script>
+
+
+
+        var nt_example2 = $('#nt-example2').newsTicker({
+            row_height: 60,
+            max_rows: 1,
+            speed: 300,
+            duration: 6000,
+            prevButton: $('#nt-example2-prev'),
+            nextButton: $('#nt-example2-next'),
+            hasMoved: function () {
+                $('#nt-example2-infos-container').fadeOut(200, function () {
+                    $('#nt-example2-infos .infos-hour').text($('#nt-example2 li:first span').text());
+                    $('#nt-example2-infos .infos-text').text($('#nt-example2 li:first').data('infos'));
+                    $(this).fadeIn(400);
+                });
+            },
+            pause: function () {
+                $('#nt-example2 li i').removeClass('fa-play').addClass('fa-pause');
+            },
+            unpause: function () {
+                $('#nt-example2 li i').removeClass('fa-pause').addClass('fa-play');
+            }
+        });
+        $('#nt-example2-infos').hover(function () {
+            nt_example2.newsTicker('pause');
+        }, function () {
+            nt_example2.newsTicker('unpause');
+        });
+        </script>
+
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-48039933-1', 'risq.github.io');
+            ga('send', 'pageview');
+		</script>
+
+
+
+
+
+
+

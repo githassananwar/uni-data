@@ -1,0 +1,129 @@
+@{
+    Layout = "~/Views/Admin/_Layout.cshtml";
+}
+
+@model List<finalProject.Models.Donor>
+
+ <div id="page-wrapper">
+            <div class="container-fluid">
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Blank Page
+                            <small>Subheading</small>
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i>  <a href="../../Admin/index">Dashboard</a>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-file"></i> Blank Page
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container-fluid -->
+     <div class="container">
+  <h2>Dynamic Tabs</h2>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Requests</a></li>
+    <li><a data-toggle="tab" href="#menu1">Donors</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <div class="jumbotron">
+    <h1 style ="text-align:center">...Requests...</h1>
+  </div>
+
+        <div class="container">
+  		<section>
+  			<div class="page-header" >
+  				<h2>Properties:@if (Model.Count != 0)
+                 {<small> These are results</small>}
+                 else
+                 {<small> No Result Found</small>}
+  				</h2>
+  			</div>
+
+  			<div class="row">    
+              @foreach (var x in ViewBag.req)
+              {
+                     <div class="col-md-4">
+  					<blockquote>
+                         <p>User Name: @x.Name<br /> Gender: @x.Gender<br />Blood Group: @x.BloodGroup</p><br />
+  						<p>Email: @x.Email<br /> Contact: @x.Contact </p>
+  					</blockquote>
+                         @Html.ActionLink("Delete", "./../Admin/removeRequest" ,new {Id=x.AccepterId}, new { @class = "btn btn-primary btn-large"})
+  				</div>
+
+
+              }
+  			</div><!-- End row -->
+  		</section>
+  	</div><!--End Container-->
+
+    </div>
+
+
+    <div id="menu1" class="tab-pane fade">
+        <div class="container" id ="abtus">
+  <div class="jumbotron">
+    <h1 style ="text-align:center">...Donors...</h1>
+  </div>
+       </div>
+
+
+<div class="container">
+  		<section>
+  			<div class="page-header" >
+  				<h2>Properties:@if (Model.Count != 0)
+                 {<small> These are results</small>}
+                 else
+                 {<small> No Result Found</small>}
+  				</h2>
+  			</div>
+
+  			<div class="row">    
+              @foreach (var x in Model)
+              {
+                  if(x.rank!="Admin")
+                  {
+                  String s = x.SourcePath;
+                  if (x.SourcePath == "../../")
+                  {
+                      s = "../../Img/Pink-Dot-300x300.jpg";
+                  }
+                     <div class="col-md-4">
+  					<blockquote>
+
+                         <p><img src="@s" class="pic" style="float:left"/>Name: @x.Name<br /> City: @x.City<br />Blood Group: @x.BloodGroup</p><br />
+  						<p>CNIC: @x.Cnic<br /> Email: @x.Email <br /> Contact: @x.Contact <br /> DOB: @x.DOB</p>
+  					</blockquote>
+                         @Html.ActionLink("Delete", "./../Admin/removeDonor" ,new {Id=x.DonorId}, new { @class = "btn btn-primary btn-large"})
+  				</div>
+              }
+
+              }
+  			</div><!-- End row -->
+  		</section>
+  	</div><!--End Container-->
+    </div>
+  </div>
+</div>
+     </div>
+
+@section s1{
+<style>
+.pic {
+            height: 80px;
+            width: 80px;
+            margin-right: 4px;
+        }
+    </style>
+}
+

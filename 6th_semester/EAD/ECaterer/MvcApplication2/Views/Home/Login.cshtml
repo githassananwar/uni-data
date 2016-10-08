@@ -1,0 +1,49 @@
+﻿@model MvcApplication2.Models.user
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="container">
+
+    @if(Session["info"] == "false")
+    {
+        <script>
+            alert("Invalid UserName or Password!");
+        </script>
+    }
+
+    <div class="row">
+           <br />
+            <div class="col-lg-12">
+                <ol class="breadcrumb">
+                    <li><a href="/Home/Index">Home</a>
+                    </li>
+                    <li class="active">Login</li>
+                </ol>
+
+                 <h2 class="page-header">Login</h2>
+              
+        <h4><strong>New to ECaterer? </strong><a href="../Home/SignUp" id="signup">SignUp here!</a></h4>
+            <br />
+    <div class="form-group">
+       @using (Html.BeginForm("../Home/SignIn", "", FormMethod.Post,
+                                      new { @class = "form-signin" }))
+                                      {
+            <h3 class="form-signin-heading">Welcome! Please Log In</h3>
+            <hr class="colorgraph"><br>
+            
+            <input type="text" class="form-control" name="Username" placeholder="Username" required="" autofocus="" id="username"/>
+                <br />
+            <input type="password" class="form-control" name="Password" placeholder="Password" required="" id="password"/>
+                <br />
+            <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit" id="submitbutton">Login</button>
+       }
+        
+    </div>
+</div>
+        </div>
+    </div>
