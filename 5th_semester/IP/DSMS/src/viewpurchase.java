@@ -1,0 +1,135 @@
+import java.*;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+@WebServlet("/viewpurchase")
+public class viewpurchase extends HttpServlet
+{
+	private static final long serialVersionUID = 1L;
+	
+	public viewpurchase()
+	{
+		super();
+	}
+	
+	protected void doPost(HttpServletRequest request , HttpServletResponse response) throws ServletException , IOException
+	{
+
+		String id = request.getParameter("id");
+		
+		
+		String day = request.getParameter("day");
+		String mon = request.getParameter("mon");
+		String year = request.getParameter("year");
+
+		String day1 = request.getParameter("day1");
+		String mon1 = request.getParameter("mon1");
+		String year1 = request.getParameter("year1");
+
+		String day2 = request.getParameter("day2");
+		String mon2 = request.getParameter("mon2");
+		String year2 = request.getParameter("year2");
+		
+		
+		PrintWriter out = response.getWriter();
+		
+		
+
+		 out.println("<html>");
+    		out.println("<head><title>View Purchase</title></head>" +
+    				"<style>table{table-layout: fixed; }</style>");
+   		 out.println("<body style=background-COLOR:#F0F0F0>");
+		
+		Connection conn;
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost/shop", "root", "");
+			Statement st = conn.createStatement();
+		
+			String query="Select p.purchaseid, p.purchasedate, p.purchasequantity,p.purchaseamount,p.stockid from purchase p";
+			if(!(id.isEmpty()))
+			{
+				query=query+" where p.purchaseid="+id;
+				if(!(day.isEmpty() && mon.isEmpty() && year.isEmpty()))
+				{
+					query=query+" and p.purchasedate='"+year+"-"+mon+"-"+day+"'";
+				}
+				else if(!(day1.isEmpty() && mon1.isEmpty() && year1.isEmpty()))
+				{
+					query=query+" and p.purchasedate between '"+year1+"-"+mon1+"-"+day1+"'";
+					if(!(day2.isEmpty() && mon2.isEmpty() && year2.isEmpty()))
+					{
+						query=query+" and '"+year2+"-"+mon2+"-"+day2+"'";
+					}
+					
+				}
+			}
+			
+			
+			ResultSet rs = st.executeQuery( query );
+			
+			 
+			
+		boolean flag=true;
+		boolean dis=true;
+		
+		
+		while(rs.next()){
+			flag=false;
+			if(dis)
+			{	
+				out.println("<h1 style=color:0093b8;>Record found:-</h1>");
+			}
+			
+			String purchaseid = rs.getString(1);
+			String purchasedate = rs.getString(2);
+			String purchasequantity = rs.getString(3);
+			String purchaseamount = rs.getString(4);
+			String stockid = rs.getString(5);
+			
+	
+
+		 if(dis)
+    	 {
+			 out.println("<table border=1 width=700 align=center><tr><td><h4 style=display:inline>PurchaseID</h4></td><td><h4 style=display:inline>PuchaseDate</h4></td>" +
+    	 		"<td><h4 style=display:inline>PurchaseQuantity</h4></td><td><h4 style=display:inline>PurchaseAmount</h4></td><td><h4 style=display:inline>StockID</h4></td></tr>");
+			 
+    	 }
+		 dis=false;
+		 out.println("<tr><td>"+purchaseid+ "</td><td>"+purchasedate+"</td><td>"+purchasequantity+"</td><td>"+purchaseamount+"</td><td>"+stockid+"</td></tr>");
+	
+		 
+		}
+		 
+		
+	   
+		if(flag)
+		{
+			out.println("<h1 style=color:0093b8;text-align:center>No Record found.</h1>");
+	    }
+     
+    
+
+
+out.println("</table></body></html>");
+
+		
+		}
+		catch(Exception ex)
+		{
+			System.out.println("Exception :" + ex.getMessage());
+			ex.getStackTrace();
+		}
+	}
+}

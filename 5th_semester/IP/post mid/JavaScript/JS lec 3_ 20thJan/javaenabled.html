@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Is Java enabled?</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    document.getElementById("demo").innerHTML =
+     navigator.platform + "<br/> Browser language is " + navigator.language +" <br/> Java enabled is " + navigator.javaEnabled();
+}
+</script>
+
+</body>
+</html>

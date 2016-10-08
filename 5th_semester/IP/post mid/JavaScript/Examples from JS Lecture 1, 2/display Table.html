@@ -1,0 +1,22 @@
+<html>
+<head>
+<script>
+function displayTable()
+{
+ var num=parseInt(document.getElementById("num").value);
+
+ var txt ="";
+ for( x=0 ; x<10 ;x++)
+ {
+ 	txt += num + " x "+ x + " = "+ num*x + "\n";
+
+  }
+ alert (txt);
+}
+</script>
+</head>
+<body>
+Enter Number : <input type="text" value="" id ="num" ></input> <br/>
+<input type="button" value="Show Table" onclick="displayTable()"></input>
+</body>
+</html>

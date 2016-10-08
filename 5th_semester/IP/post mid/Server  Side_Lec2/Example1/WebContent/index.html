@@ -1,0 +1,73 @@
+<html>
+<head>
+
+<script>
+function output()
+{
+var text ="you entered \n";
+text= "Entered Name= " + document.getElementById("name").value;
+text += "\n Entered Email= "+ document.getElementById("email").value;
+text+= "\n Selected Highest degree: ";
+if (document.getElementById('r1').checked)
+  text += document.getElementById('r1').value;
+if (document.getElementById('r2').checked)
+  text += document.getElementById('r2').value;
+if (document.getElementById('r3').checked)
+  text += document.getElementById('r3').value;
+if (document.getElementById('r4').checked)
+  text += document.getElementById('r4').value;
+if (document.getElementById('r5').checked)
+  text += document.getElementById('r5').value;
+
+text+= "\n Selected colors:\n ";
+for ( i=0;i<document.getElementById('colors').options.length;i++)
+{
+if(document.getElementById('colors').options[i].selected)
+{
+text+= document.getElementById('colors').options[i].value + "\n";
+
+}
+}
+alert (text);
+}
+
+function checkName()
+{
+if(document.getElementById("name").value=="")
+      document.getElementById("errname").innerHTML="please enter name";
+else
+	document.getElementById("errname").innerHTML="";
+}
+function checkEmail()
+{
+if(document.getElementById("email").value=="")
+      document.getElementById("erremail").innerHTML="please enter email";
+else
+	document.getElementById("erremail").innerHTML="";}
+</script>
+</head>
+<body>
+<h1> Form Validation </h1>
+
+<form action="FormProcessor" method="go">
+ <label for="name">Name:</label>
+<input name="name" type="text" id="name"  onblur="checkName()"/> <span id="errname"  style="color:red;"></span><br/>
+ <label for="email">Email:</label>
+<input name="email" type="text" id="email" onblur="checkEmail()"/> <span id="erremail" style="color:red;"></span><br/>
+ Choose Highest Degree: <br/>
+<input type="radio" id="r1" name="r" checked value="Matric">Matric<br/>
+<input type="radio" id="r2" name="r" value="Intermediate">Intermediate<br/>
+<input type="radio" id="r3" name="r" value= "BS">BS<br/>
+<input type="radio" id="r4" name="r" value="MS">MS<br/>
+<input type="radio" id="r5" name="r" value="PhD">PhD<br/>
+Select colors:
+<select name ="colors" multiple>
+<option value = "red"> red</option>
+<option value = "blue"> blue</option>
+<option value = "green"> green</option>
+<option value = "yellow"> yellow</option>
+</select>
+<input type="submit" id="go" value="Go" onclick="output()" />
+</form>
+</body>
+</html>

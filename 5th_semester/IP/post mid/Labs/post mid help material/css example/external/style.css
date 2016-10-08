@@ -1,0 +1,25 @@
+body
+{
+background-color:skyblue;
+}
+h1
+{
+color:blue;
+}
+p
+{
+color:red;
+font-size:20;
+font-family:Calibri;
+}
+.stylebyclass
+{
+color:DarkMagenta ;
+font-size:30;
+text-decoration:bold;
+}
+#stylebyid
+{
+background-color:Indigo;
+text-decoration: underline;
+}

@@ -1,0 +1,239 @@
+<html>
+
+<head>
+
+<link rel="StyleSheet" href="style.css"/>
+<title>Generate Invoice</title>
+
+<script>
+var count=2;
+function addItem()
+{
+var form = document.getElementsByTagName('form')[0];
+    input1 = document.createElement('input');
+input1.setAttribute('type', 'text');
+input1.setAttribute('name', 'item'+count);
+input1.setAttribute('placeholder', 'Item ID');
+
+input2 = document.createElement('input');
+input2.setAttribute('type', 'text');
+input2.setAttribute('name', 'qt'+count);
+input2.setAttribute('placeholder', 'Quantity');
+
+ var point=document.getElementById('point');
+
+  var table = document.getElementById('table');
+  var row = table.insertRow (-1);
+	 var cell1 = row.insertCell (-1);
+	var cell2 = row.insertCell (-1);
+cell1.appendChild(input1);
+cell2.appendChild(input2);
+
+count=count+1;
+
+}
+
+</script>
+
+
+<style>
+
+#options 
+{
+background-color:#000000;
+height:5.5%;
+width:100%;
+}
+
+#brk
+{
+background-color:#000000;
+height:1%;
+width:100%;
+display: inline;
+float:right;
+
+}
+
+
+#textsection
+{
+background-COLOR:#F0F0F0;
+float:left;
+height:77%;
+width:100%;
+}
+
+
+h1
+{
+display: inline;
+}
+
+h3
+{
+display: inline;
+}
+
+</style>
+</head>
+
+
+
+<body style="background-color:#292929">
+
+
+<div id="Header" >
+<br><br><br>
+<h1 style="color:white">&nbsp &nbsp Generate Invoice</h1>
+
+</div>
+
+
+<div class="image">
+<img src="pic.jpg" border="2" style="border-color:white"/>
+</div>
+
+
+<div id="strip">
+</div>
+
+<div id="brk" >
+</div>
+
+<div id="options">
+<ul id="drop-nav">
+  <li><a href="home.html">Home</a></li>
+  <li><a href="#">Employee</a>
+    <ul>
+      <li><a href="addemp.jsp">Add Employee</a></li>
+      <li><a href="viewemp.html">View Employee Details</a></li>
+      <li><a href="updateemp.html">Update Employee</a></li>
+      <li><a href="rememp.jsp">Remove Employee</a></li>
+    </ul>
+  </li>
+  <li><a href="#">Purchase</a>
+    <ul>
+      <li><a href="viewpurchase.html">View Purchase</a></li>
+    </ul>
+  </li>
+  <li><a href="#">Sale</a>
+    <ul>
+      <li><a href="viewsale.html">View Sale</a></li>
+    </ul>
+  </li>
+
+<li><a href="#">Invoice</a>
+    <ul>
+      <li><a href="geninv.html">Generate Invoice</a></li>
+ 	<li><a href="viewinv.html">View Invoice</a></li>
+    </ul>
+  </li>
+
+
+<li><a href="#">Stock</a>
+    <ul>
+      <li><a href="addstock.jsp">Add Stock</a></li>
+	<li><a href="viewstock.html">View Stock</a></li>
+    </ul>
+  </li>
+
+
+
+</ul>
+</div>
+
+
+
+<div id="textsection" >
+<br>
+
+
+<form method = "post" action = "geninv">
+  <table id="table" align="center" frame="box">
+
+<tr></tr>
+	
+
+ 
+    <tr>
+      <td align="right"><h3 style="color:0093b8;">
+	&nbsp&nbsp&nbsp Date: </h3></td>
+	<td align="left"><input type="text" name="day" maxlength="2" size="1" placeholder="DD" />
+&nbsp&nbsp<input type="text" name="mon" maxlength="2" size="1" placeholder="MM" />
+&nbsp&nbsp<input type="text" name="year" maxlength="4" size="5" placeholder="YYYY" />
+</td>
+    </tr>
+
+<tr></tr><tr></tr>
+
+
+   <tr>
+      <td align="right"><h3 style="color:0093b8;">
+	&nbsp&nbsp&nbsp Invoice ID: </h3></td>
+      <td align="left"><input type="text" name="id" /></td>
+    </tr>
+
+<tr></tr><tr></tr>
+
+
+
+
+   <tr>
+      <td align="right"><h3 style="color:0093b8;">
+	&nbsp&nbsp&nbsp Employee ID: </h3></td>
+      <td align="left"><input type="text" name="empid" /></td>
+    </tr>
+
+<tr></tr><tr></tr>
+
+<tr>
+      <td align="left"><h3 style="color:0093b8;">
+	Items:- </h3></td>
+      </td>
+    </tr>
+
+
+<tr>
+<td align="right"><input type="text" name="item1" placeholder="Item ID"/></td>
+<td align="left"><input type="text" name="qt1" placeholder="Quantity"/></td>
+
+</tr>
+
+
+
+<tr></tr><tr></tr>
+
+
+</table>
+
+
+<table align="center">
+
+<tr>
+<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+<td align="right">
+<input type="button" id="add" value="Add item" onclick="addItem()"/>
+&nbsp&nbsp&nbsp<input type="submit" value="Generate" /></td>
+</tr>
+
+</table>
+
+
+
+</form>
+
+
+</div>
+
+
+<div id="strip">
+</div>
+
+<div id="footer" >
+Copyrights-All Rights Reserved
+</div>
+</body>
+
+
+</html>

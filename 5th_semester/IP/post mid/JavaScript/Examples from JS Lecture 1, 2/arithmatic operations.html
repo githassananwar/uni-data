@@ -1,0 +1,47 @@
+<html>
+<head>
+<script>
+
+function Subtract()
+{
+ var n1= document.getElementById("n1").value;
+ var n2= document.getElementById("n2").value;
+
+ document.getElementById("result").value = n1 - n2;
+}
+function Add()
+{
+ var n1= document.getElementById("n1").value;
+ var n2= document.getElementById("n2").value;
+
+ var sum = parseInt(n1) + parseInt(n2);
+ document.getElementById("result").value = sum;
+}
+function Multiply()
+{
+ var n1= document.getElementById("n1").value;
+ var n2= document.getElementById("n2").value;
+
+ document.getElementById("result").value = parseInt(n1) * parseInt(n2);
+}
+function Divide()
+{
+ var n1= document.getElementById("n1").value;
+ var n2= document.getElementById("n2").value;
+
+ document.getElementById("result").value = parseInt(n1) / parseInt(n2);
+}
+</script>
+</head>
+<body>
+<h1> Arithmatic Operations Demo</h1>
+<table> 
+<tr><td>Enter Number 1 : </td><td> <input type="text" id="n1" ></input> </td></tr>
+<tr><td>Enter Number 2 : </td><td><input type="text" id="n2" ></input> </td></tr>
+<tr><td>Result : </td><td><input type="text" id="result" ></input> </td></tr>
+<tr><td colspan="2"><input type="button" value="Add" onclick="Add()"></input>
+<input type="button" value="Subtract" onclick="Subtract()"></input>
+<input type="button" value="Multiply" onclick="Multiply()"></input>
+<input type="button" value="Divide" onclick="Divide()"></input> </td></tr>
+</body>
+</html>

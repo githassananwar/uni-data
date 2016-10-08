@@ -1,0 +1,46 @@
+BODY {	FONT-WEIGHT: normal; FONT-SIZE: 0.8em; MARGIN: 0px; WORD-SPACING: normal; TEXT-TRANSFORM: none; FONT-FAMILY: Verdana, Helvetica, sans-serif; LETTER-SPACING: normal; BACKGROUND-COLOR: white}
+H1   {	COLOR: #003366}
+H2   {	COLOR: green}
+H3   {	COLOR: red}
+H4   {	COLOR: #003366}
+H5   {	COLOR: #003366}
+TH   {	COLOR: #003366}
+THEAD{	COLOR: #003366}
+TFOOT{	COLOR: #003366}
+.text{FONT-SIZE: 8pt; WORD-SPACING: normal; TEXT-TRANSFORM: none; FONT-STYLE: normal; FONT-FAMILY: Verdana; LETTER-SPACING: normal; TEXT-DECORATION: none}
+.invoice_text {	FONT-SIZE: 10pt; WORD-SPACING: normal; TEXT-TRANSFORM: none; FONT-STYLE: normal; FONT-FAMILY: Arial; LETTER-SPACING: normal; TEXT-DECORATION: none}
+.head {	FONT-WEIGHT: bold; FONT-SIZE: 8pt; WORD-SPACING: normal; TEXT-TRANSFORM: none; FONT-STYLE: normal; FONT-FAMILY: Verdana; LETTER-SPACING: normal; TEXT-DECORATION: none}
+.heading {FONT-WEIGHT: bold; FONT-SIZE: 10pt; WORD-SPACING: normal; TEXT-TRANSFORM: none; FONT-STYLE: normal; FONT-FAMILY: Verdana; LETTER-SPACING: normal; TEXT-DECORATION: none}
+.txt {	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT: 8pt verdana; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; HEIGHT: 18px}
+.bigtxt {BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT: 8pt verdana; BORDER-LEFT: #000000 1px solid; WIDTH: 300px; BORDER-BOTTOM: #000000 1px solid; HEIGHT: 18px}
+.detailtxt {BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT: 8pt verdana; BORDER-LEFT: #000000 1px solid; WIDTH: 300px; BORDER-BOTTOM: #000000 1px solid; HEIGHT: 70px}
+.btn {	FONT: 8pt verdana; WIDTH: 100px}
+.lbl {	FONT: bold 8pt verdana; COLOR: red}
+.lbltxt {FONT: 8pt verdana}
+.ddl {FONT: 8pt verdana; HEIGHT: 18px}
+.datagrid{	BORDER-TOP-WIDTH: 1px; PADDING-RIGHT: 6px; PADDING-LEFT: 6px; BORDER-LEFT-WIDTH: 1px; BORDER-BOTTOM-WIDTH: 1px; PADDING-BOTTOM: 6px; FONT: 8pt verdana; PADDING-TOP: 6px; HEIGHT: 20px; BORDER-RIGHT-WIDTH: 1px}
+.dgheader{	FONT-WEIGHT: bold; BACKGROUND-COLOR: #ececec}
+.list_heading{	FONT-WEIGHT: bold; FONT-SIZE: 8pt; BACKGROUND-COLOR: #ececec}
+.list_rows{	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 8pt}
+H1 	{	FONT-WEIGHT: 700; FONT-SIZE: 2em; WORD-SPACING: normal; TEXT-TRANSFORM: none; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; LETTER-SPACING: normal; TEXT-DECORATION: none}
+H2 	{	FONT-WEIGHT: 700; FONT-SIZE: 1.75em; WORD-SPACING: normal; TEXT-TRANSFORM: none; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; LETTER-SPACING: normal; TEXT-DECORATION: none}
+H3 	{	FONT-WEIGHT: 500; FONT-SIZE: 1.58em; WORD-SPACING: normal; TEXT-TRANSFORM: none; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; LETTER-SPACING: normal; TEXT-DECORATION: none}
+H4 	{	FONT-WEIGHT: 500; FONT-SIZE: 1.33em; WORD-SPACING: normal; TEXT-TRANSFORM: none; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; LETTER-SPACING: normal; TEXT-DECORATION: none}
+H5 	{	FONT-WEIGHT: 700; FONT-SIZE: 1em; WORD-SPACING: normal; TEXT-TRANSFORM: none; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; LETTER-SPACING: normal; TEXT-DECORATION: none}
+DT 	{	FONT-WEIGHT: 700; FONT-SIZE: 1em; WORD-SPACING: normal; TEXT-TRANSFORM: none; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; LETTER-SPACING: normal; TEXT-DECORATION: none}
+H6 	{	FONT-WEIGHT: 700; FONT-SIZE: 0.8em; WORD-SPACING: normal; TEXT-TRANSFORM: none; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; LETTER-SPACING: normal; TEXT-DECORATION: none}
+A:link  {	COLOR: #29589a}
+A:visited{	COLOR: #333399}
+A:active{	COLOR: maroon}
+A:hover {	COLOR: maroon}
+SMALL 	{	FONT-SIZE: 0.7em}
+BIG 	{	FONT-SIZE: 1.17em}
+BLOCKQUOTE{	FONT-FAMILY: Courier New, monospace}
+PRE 	{	FONT-FAMILY: Courier New, monospace}
+UL LI 	{	LIST-STYLE-TYPE: square}
+UL LI LI{	LIST-STYLE-TYPE: disc}
+UL LI LI LI {	LIST-STYLE-TYPE: circle}
+OL LI 	    {	LIST-STYLE-TYPE: decimal}
+OL OL LI    {	LIST-STYLE-TYPE: lower-alpha}
+OL OL OL LI {	LIST-STYLE-TYPE: lower-roman}
+.colorscroll{	SCROLLBAR-FACE-COLOR: #d5d5d5; SCROLLBAR-HIGHLIGHT-COLOR: #fefefe; SCROLLBAR-SHADOW-COLOR: #b50707; SCROLLBAR-BASE-COLOR: #424348; scrollbar-3d-light-color: #424348; scrollbar-dark-shadow-color: #FF0000}

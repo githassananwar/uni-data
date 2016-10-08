@@ -1,0 +1,44 @@
+<html>
+<head>
+<script>
+function changeColorWhite()
+{
+//document.getElementById("p1").style.color="red"; 
+document.body.style.backgroundColor="white";
+
+}
+function changeColorGreen()
+{
+document.body.style.backgroundColor="green";
+
+}
+function changeColorBlue()
+{ 
+document.body.style.backgroundColor="blue";
+
+}
+function changeColorRed()
+{ 
+document.body.style.backgroundColor="red";
+
+}
+function changeColorYellow()
+{ 
+document.body.style.backgroundColor="yellow";
+
+}
+
+</script>
+</head>
+<body style="margin:5%"><h2> Click the Link Below to Change Page BackGround Color</h2>
+<table>
+<tr><td style="background-color:green"><a onclick="changeColorGreen()" >Change to Green </a></td>
+<td style="background-color:red"><a onclick="changeColorRed()" >Change to Red </a></td></tr>
+<tr><td style="background-color:blue"><a onclick="changeColorBlue()" >Change to Blue</a></td>
+<td style="background-color:yellow"><a onclick="changeColorYellow()" >Change to Yellow </a>
+</td></tr>
+
+</table>
+<input type="button" value="Back to White" onclick="changeColorWhite()"></input>
+</body>
+</html>

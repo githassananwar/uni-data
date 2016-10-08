@@ -1,0 +1,93 @@
+<html>
+<head>
+
+<script>
+
+function bold()
+{
+ document.getElementById("ta").style.fontWeight="bold";
+}
+function italic()
+{
+ document.getElementById("ta").style.fontStyle="italic";
+}
+function underline()
+{
+ document.getElementById("ta").style.textDecoration="underline";
+}
+function fontFamily()
+{
+ document.getElementById("ta").style.fontFamily=document.getElementById("family").value;
+}
+function fontsize()
+{
+ document.getElementById("ta").style.fontSize=document.getElementById("size").value;
+}
+function textcolor()
+{
+ document.getElementById("ta").style.color=document.getElementById("col").value;
+}
+function backcolor()
+{
+ document.getElementById("ta").style.backgroundColor=document.getElementById("back").value;
+}
+function checkEmail()
+{
+if(document.getElementById("email").value=="")
+      document.getElementById("erremail").innerHTML="please enter email";
+else
+	document.getElementById("erremail").innerHTML="";}
+</script>
+</head>
+<body>
+<h1> Text Editor </h1>
+
+<table>
+<tr>
+<td colspan= "2">
+<input type="button" value="Bold" onclick="bold()"></input>
+<input type="button" value="Italic" onclick="italic()"></input>
+<input type="button" value="Underline" onclick="underline()"></input></td>
+</tr>
+<tr> <td> Font Family: </td> <td> <select id="family" onchange="fontFamily()">
+<option value="Times New Roman">Times New Roman</option>
+<option value="Georgia">Georgia</option>
+<option value="Arial">Arial</option>
+<option value="Blackadder ITC">Blackadder ITC</option>
+<option value="Algerian">Algerian</option>
+</select></td>
+</tr>
+<tr> <td>Font Size: </td> <td> <select id="size" onchange="fontsize()">
+<option value="100%">100%</option>
+<option value="150%">150%</option>
+<option value="200%">200%</option>
+<option value="250%">250%</option>
+<option value="300%">300%</option>
+<option value="500%">500%</option>
+</select></td>
+</tr>
+<tr> <td> Text Color:</td> <td> <select id="col" onchange="textcolor()">
+<option value="red">Red</option>
+<option value="blue">Blue</option>
+<option value="green">Green</option>
+<option value="yellow">Yellow</option>
+<option value="black">Black</option>
+</select> </td>
+</tr>
+<tr> <td> Background Color:</td> <td> <select id="back" onchange="backcolor()">
+<option value="red">Red</option>
+<option value="blue">Blue</option>
+<option value="green">Green</option>
+<option value="yellow">Yellow</option>
+<option value="black">Black</option>
+</select> </td>
+</tr>
+</table>
+
+<br/>
+
+
+<br/>
+<textarea id="ta" rows="25" cols="150" style="overflow:scroll;"></textarea>
+</body>
+</html>

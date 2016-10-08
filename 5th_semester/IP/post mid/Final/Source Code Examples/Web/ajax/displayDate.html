@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Untitled Document</title>
+</head>
+<script type="text/javascript" language="javascript">
+
+       function dateInfo() {
+			
+		
+		XMlHttp = new XMLHttpRequest();
+		
+		    var url="showDate.jsp";
+		    XMlHttp.open('GET', url, true);
+			XMlHttp.send(null);			
+			
+		XMlHttp.onreadystatechange=function(){
+			
+		if(XMlHttp.readyState == 4)
+		{
+				document.getElementById		("display").innerHTML=XMlHttp.responseText;
+		} 
+		}
+	     
+	} // end of function
+
+</script>
+<body>
+
+
+	<input type="button" name="button" value="Display System Date" 	onclick="dateInfo()" /> 		 	
+
+	<div id="display" style="color:#FF0000 "></div>
+</body>
+</html>

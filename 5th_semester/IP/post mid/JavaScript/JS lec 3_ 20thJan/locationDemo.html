@@ -1,0 +1,21 @@
+<html>
+<body>
+
+<p>Click the button to display the hostname and port number of the current URL.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+ document.getElementById("demo").innerHTML = location.host + 
+						"<br/> location.href = " + location.href;
+      
+       //location.assign("http://www.google.com");
+      //location.reload();
+}
+</script>
+
+</body>
+</html>

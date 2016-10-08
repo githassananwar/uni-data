@@ -1,0 +1,76 @@
+
+<html>
+<head>
+<title>Untitled Document</title>
+</head>
+<script type="text/javascript" language="javascript">
+
+       function requestUserInfo() {
+	
+	var pId = document.getElementById("login").value;
+       	if(pId.length==0)
+	{
+	document.getElementById("loginmsg").innerHTML = "Login ID is Empty";
+	return false;
+	}
+	else
+	{
+	var XMlHttp = new XMLHttpRequest();
+	var url="search.jsp?id="+pId;
+	XMlHttp.open('GET', url, true);
+	XMlHttp.send(null);			
+		
+	XMlHttp.onreadystatechange=function(){
+			
+	if(XMlHttp.readyState == 4)
+	{document.getElementById("loginmsg").innerHTML=XMlHttp.responseText;} 
+
+
+	} 
+			
+			}// end of else
+			
+        } // end of function
+
+
+</script>
+<body>
+
+<form method="post" name="addfaculty">
+  <table width="729" border="0">
+    
+    <tr>
+      <td colspan="2"><div align="center">Faculty Registration Form</div></td>
+    </tr>
+
+    <tr>
+      <td width="83">Login ID*</td>
+      <td width="160"><input name="login" type="text" id="login" /></td>
+      <td><input type="button" name="button" value="Check Availbilty" 			onclick="requestUserInfo()" /></td>
+
+      <td width="364"><div id="loginmsg" style="color:#FF0000 "></div></td>
+    </tr>
+
+
+    <tr>
+      <td>First Name</td>
+      <td><input name="firstname" type="text" id="firstname" /></td>
+      <td width="104"></td>
+    </tr>
+
+    <tr>
+      <td>Last Name </td>
+      <td><input name="lastname" type="text" id="lastname" /></td>
+      <td width="104"></td>
+    </tr>
+   
+    <tr>
+      <td><input type="submit" value="Save"></td>
+      <td><input type="reset" value="Clear"></td>
+    </tr>
+
+  </table>
+</form>
+
+</body>
+</html>

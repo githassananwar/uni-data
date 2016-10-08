@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app>
+    <display-name>Servlet 2.4 Examples</display-name>
+    <description>
+      Servlet 2.4 Examples.
+    </description>    
+    <servlet>
+        <servlet-name>DataServletExample</servlet-name>
+        <servlet-class>DataServletExample</servlet-class>
+    </servlet>
+   
+    <servlet-mapping>
+        <servlet-name>DataServletExample</servlet-name>
+        <url-pattern>/DataServlet</url-pattern>
+    </servlet-mapping>    
+</web-app>
